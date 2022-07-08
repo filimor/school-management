@@ -29,7 +29,7 @@ English | [Português (Brasil)](./README.pt-BR.md)
   [![action-codeql-shield]][action-codeql-link]
   [![action-dependency-shield]][action-dependency-link]
   [![action-lint-shield]][action-lint-link]
-  [![actions-ghpages-shield]][actions-ghpages-link]
+  <!-- [![actions-ghpages-shield]][actions-ghpages-link] -->
   <!-- ![Requires.io (branch)][requires-io] -->
 
 </div>
