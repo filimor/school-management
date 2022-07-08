@@ -4,8 +4,8 @@
 # https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
 
 version: 2
-updates: 
+updates:
   — package-ecosystem: “nuget”
-  directory: “/” 
+  directory: “src/”
   schedule: 
     interval: “daily"

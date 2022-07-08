@@ -6,24 +6,31 @@ English | [Português (Brasil)](./README.pt-BR.md)
 </p>
 
 <h3 align="center">Project Title</h3>
-
+<br>
 <div align="center">
 
-  [![Status](https://img.shields.io/badge/status-active-success.svg)]()
-  ![Code Climate maintainability][code-climate]
-  ![Travis (.org) branch][travis]
-  ![Codecov branch][codecov]
-  ![Requires.io (branch)][requires-io]
-  ![GitHub issues][issues]
-  ![GitHub pull requests][pull-requests]
-  ![GitHub forks][forks]
-  ![GitHub stars][stars]
+  [![Status][status]]()
   ![GitHub repo size][repo-size]
-  ![GitHub All Releases][releases]
-  ![GitHub language count][language-count]
-  ![GitHub top language][top-language]
   ![GitHub last commit][last-commit]
   ![License][license]
+  <!-- ![GitHub issues][issues]
+  ![GitHub pull requests][pull-requests]
+  ![GitHub forks][forks]
+  ![GitHub stars][stars] -->
+  <!-- ![GitHub All Releases][releases]
+  ![GitHub language count][language-count]
+  ![GitHub top language][top-language] -->
+
+  [![code-climate-shield]](code-climate-link)
+  ![Travis (.org) branch][travis]
+  ![Codecov branch][codecov]
+  [![action-dotnet-shield]][action-dotnet-link]
+  [![action-build-shield]][action-build-link]
+  [![action-codeql-shield]][action-codeql-link]
+  [![action-dependency-shield]][action-dependency-link]
+  [![action-lint-shield]][action-lint-link]
+  [![actions-ghpages-shield]][actions-ghpages-link]
+  <!-- ![Requires.io (branch)][requires-io] -->
 
 </div>
 
@@ -109,10 +116,11 @@ Add additional notes about how to deploy this on a live system.
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
-- [MongoDB](https://www.mongodb.com/) - Database
-- [Express](https://expressjs.com/) - Server Framework
-- [VueJs](https://vuejs.org/) - Web Framework
-- [NodeJs](https://nodejs.org/en/) - Server Environment
+- [Visal Studio 2022](https://visualstudio.microsoft.com/vs/)
+- [ASP.NET 6](https://docs.microsoft.com/en-us/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-6.0)
+- [Entity Framework 6](https://docs.microsoft.com/en-us/ef/core/)
+- [SQL Server 2019](https://www.microsoft.com/pt-br/sql-server/sql-server-2019)
+- [Azure](https://azure.microsoft.com/en-us/)
 
 ## 👨‍💻 Contributing <a name = "contributing"></a>
 
@@ -140,20 +148,37 @@ This project is licensed under the MIT License - see the [License](./LICENSE "MI
 - [Contributor Covenant](https://www.contributor-covenant.org/)
 - [Gitignore.io](https://www.toptal.com/developers/gitignore)
 
+<!-- SHIELDS -->
+[status]: https://img.shields.io/badge/status-active-success.svg
+[action-dotnet-shield]: https://github.com/filimor/school-management/actions/workflows/dotnet.yml/badge.svg
+[action-build-shield]: https://github.com/filimor/school-management/actions/workflows/azure-webapps-dotnet-core.yml/badge.svg
+[action-codeql-shield]: https://github.com/filimor/school-management/actions/workflows/codeql-analysis.yml/badge.svg
+[action-dependency-shield]: https://github.com/filimor/school-management/actions/workflows/dependency-review.yml/badge.svg
+[action-lint-shield]: https://github.com/filimor/school-management/actions/workflows/super-linter.yml/badge.svg
+[actions-ghpages-shield]: https://github.com/filimor/school-management/actions/workflows/pages/pages-build-deployment/badge.svg
+[code-climate-shield]: https://api.codeclimate.com/v1/badges/bb1611309b93f8822b90/maintainability
+
 <!-- LINKS -->
 [test]: https://link
-[code-climate]: https://img.shields.io/codeclimate/maintainability/filimor/<PROJECT_NAME>
-[travis]: https://img.shields.io/travis/filimor/<PROJECT_NAME>/master
-[codecov]: https://img.shields.io/codecov/c/github/filimor/<PROJECT_NAME>/master?token=<PROJECT_TOKEN>
-[requires-io]: https://img.shields.io/requires/github/filimor/<PROJECT_NAME>/master
-[issues]: https://img.shields.io/github/issues-raw/filimor/<PROJECT_NAME>
-[pull-requests]: https://img.shields.io/github/issues-pr-raw/filimor/<PROJECT_NAME>
-[forks]: https://img.shields.io/github/forks/filimor/<PROJECT_NAME>
-[stars]: https://img.shields.io/github/stars/filimor/<PROJECT_NAME>
-[repo-size]: https://img.shields.io/github/repo-size/filimor/<PROJECT_NAME>
-[releases]: https://img.shields.io/github/downloads/filimor/<PROJECT_NAME>/total
-[language-count]: https://img.shields.io/github/languages/count/filimor/<PROJECT_NAME>
-[top-language]: https://img.shields.io/github/languages/top/filimor/<PROJECT_NAME>
-[last-commit]: https://img.shields.io/github/last-commit/filimor/<PROJECT_NAME>
-[license]: https://img.shields.io/github/license/filimor/<PROJECT_NAME>
-[contributors]: https://github.com/filimor/<PROJECT_NAME>/contributors
+
+[code-climate]: https://img.shields.io/codeclimate/maintainability/filimor/school-management
+[travis]: https://img.shields.io/travis/filimor/school-management/master
+[codecov]: https://img.shields.io/codecov/c/github/filimor/school-management/master?token=d0611830-0b3b-4ddd-aa02-7917bb402501
+[requires-io]: https://img.shields.io/requires/github/filimor/school-management/master
+[issues]: https://img.shields.io/github/issues-raw/filimor/school-management
+[pull-requests]: https://img.shields.io/github/issues-pr-raw/filimor/school-management
+[forks]: https://img.shields.io/github/forks/filimor/school-management
+[stars]: https://img.shields.io/github/stars/filimor/school-management
+[repo-size]: https://img.shields.io/github/repo-size/filimor/school-management
+[releases]: https://img.shields.io/github/downloads/filimor/school-management/total
+[language-count]: https://img.shields.io/github/languages/count/filimor/school-management
+[top-language]: https://img.shields.io/github/languages/top/filimor/school-management
+[last-commit]: https://img.shields.io/github/last-commit/filimor/school-management
+[license]: https://img.shields.io/github/license/filimor/school-management
+[contributors]: https://github.com/filimor/school-management/contributors
+[action-dotnet-link]: https://github.com/filimor/school-management/actions/workflows/dotnet.yml
+[action-build-link]: https://github.com/filimor/school-management/actions/workflows/azure-webapps-dotnet-core.yml
+[action-codeql-link]: https://github.com/filimor/school-management/actions/workflows/codeql-analysis.yml
+[action-dependency-link]: https://github.com/filimor/school-management/actions/workflows/dependency-review.yml
+[action-lint-link]:  https://github.com/filimor/school-management/actions/workflows/super-linter.yml
+[actions-ghpages-link]: https://github.com/filimor/school-management/actions/workflows/pages/pages-build-deployment
