@@ -26,7 +26,7 @@
     <ProjectReference Include="..\SchoolManagement.Application\SchoolManagement.Application.csproj" />
     <ProjectReference Include="..\SchoolManagement.Domain\SchoolManagement.Domain.csproj" />
     <ProjectReference Include="..\SchoolManagement.Infrastructure\SchoolManagement.Infrastructure.csproj" />
-    <ProjectReference Include="..\SchoolManagemet.CrossCutting\SchoolManagemet.CrossCutting.csproj" />
+    <ProjectReference Include="..\SchoolManagemet.CrossCutting\SchoolManagement.CrossCutting.csproj" />
   </ItemGroup>
 
 </Project>

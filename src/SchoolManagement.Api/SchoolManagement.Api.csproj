@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SchoolManagemet.CrossCutting\SchoolManagemet.CrossCutting.csproj" />
+    <ProjectReference Include="..\SchoolManagemet.CrossCutting\SchoolManagement.CrossCutting.csproj" />
   </ItemGroup>
 
   <ItemGroup>

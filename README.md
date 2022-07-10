@@ -21,7 +21,7 @@ English | [Português (Brasil)](./README.pt-BR.md)
   ![GitHub language count][language-count]
   ![GitHub top language][top-language] -->
 
-  [![code-climate-shield]](code-climate-link)
+  [![code-climate-shield]][code-climate-link]
   ![Travis (.org) branch][travis]
   ![Codecov branch][codecov]
   [![action-dotnet-shield]][action-dotnet-link]
@@ -161,7 +161,7 @@ This project is licensed under the MIT License - see the [License](./LICENSE "MI
 <!-- LINKS -->
 [test]: https://link
 
-[code-climate]: https://img.shields.io/codeclimate/maintainability/filimor/school-management
+[code-climate-link]: https://codeclimate.com/github/filimor/school-management/maintainability
 [travis]: https://img.shields.io/travis/filimor/school-management/master
 [codecov]: https://img.shields.io/codecov/c/github/filimor/school-management/master?token=d0611830-0b3b-4ddd-aa02-7917bb402501
 [requires-io]: https://img.shields.io/requires/github/filimor/school-management/master
