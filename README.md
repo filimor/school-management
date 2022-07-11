@@ -5,7 +5,7 @@ English | [Português (Brasil)](./README.pt-BR.md)
  <img width=200px height=200px src="https://i.imgur.com/6wj0hh6.jpg" alt="Project logo"></a>
 </p>
 
-<h3 align="center">Project Title</h3>
+<h3 align="center">School Management</h3>
 <br>
 <div align="center">
 
@@ -21,14 +21,15 @@ English | [Português (Brasil)](./README.pt-BR.md)
   ![GitHub language count][language-count]
   ![GitHub top language][top-language] -->
 
-  [![code-climate-shield]][code-climate-link]
+  [![Maintainability][code-climate-shield]][code-climate-link]
   ![Travis (.org) branch][travis]
   ![Codecov branch][codecov]
-  [![action-dotnet-shield]][action-dotnet-link]
-  [![action-build-shield]][action-build-link]
-  [![action-codeql-shield]][action-codeql-link]
-  [![action-dependency-shield]][action-dependency-link]
-  [![action-lint-shield]][action-lint-link]
+  [![Tests][action-dotnet-shield]][action-dotnet-link]
+  [![Deploy][action-build-shield]][action-build-link]
+  [![CodeQL][action-codeql-shield]][action-codeql-link]
+  [![Dependencies][action-dependency-shield]][action-dependency-link]
+  [![Linter][action-lint-shield]][action-lint-link]
+  [![FOSSA Status][fossa-shield]][fossa-link]
   <!-- [![actions-ghpages-shield]][actions-ghpages-link] -->
   <!-- ![Requires.io (branch)][requires-io] -->
 
@@ -36,7 +37,7 @@ English | [Português (Brasil)](./README.pt-BR.md)
 
 ---
 
-<p align="center"> Few lines describing your project.
+<p align="center"> A simple School Management Web API built with ASP.NET 6 using TDD and Clean Architecture (under development).
   <br>
 </p>
 
@@ -54,15 +55,15 @@ English | [Português (Brasil)](./README.pt-BR.md)
 
 ## 🧐 About <a name = "about"></a>
 
-Write about 1-2 paragraphs describing the purpose of your project.
+{TODO} Write about 1-2 paragraphs describing the purpose of your project.
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
+{TODO} These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
 
 ### Prerequisites
 
-What things you need to install the software and how to install them.
+{TODO} What things you need to install the software and how to install them.
 
 ```
 Give examples
@@ -70,7 +71,7 @@ Give examples
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running.
+{TODO} A step by step series of examples that tell you how to get a development env running.
 
 Say what the step will be
 
@@ -88,11 +89,11 @@ End with an example of getting some data out of the system or using it for a lit
 
 ## 🧪 Running the tests <a name = "tests"></a>
 
-Explain how to run the automated tests for this system.
+{TODO} Explain how to run the automated tests for this system.
 
 ### Break down into end to end tests
 
-Explain what these tests test and why
+{TODO} Explain what these tests test and why
 
 ```
 Give an example
@@ -100,7 +101,7 @@ Give an example
 
 ### And coding style tests
 
-Explain what these tests test and why
+{TODO} Explain what these tests test and why
 
 ```
 Give an example
@@ -108,11 +109,11 @@ Give an example
 
 ## 💿 Usage <a name="usage"></a>
 
-Add notes about how to use the system.
+{TODO} Add notes about how to use the system.
 
 ## 🚀 Deployment <a name = "deployment"></a>
 
-Add additional notes about how to deploy this on a live system.
+{TODO} Add additional notes about how to deploy this on a live system.
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
@@ -157,6 +158,7 @@ This project is licensed under the MIT License - see the [License](./LICENSE "MI
 [action-lint-shield]: https://github.com/filimor/school-management/actions/workflows/super-linter.yml/badge.svg
 [actions-ghpages-shield]: https://github.com/filimor/school-management/actions/workflows/pages/pages-build-deployment/badge.svg
 [code-climate-shield]: https://api.codeclimate.com/v1/badges/bb1611309b93f8822b90/maintainability
+[fossa-shield]: https://app.fossa.com/api/projects/git%2Bgithub.com%2Ffilimor%2Fschool-management.svg?type=shield
 
 <!-- LINKS -->
 [test]: https://link
@@ -182,3 +184,4 @@ This project is licensed under the MIT License - see the [License](./LICENSE "MI
 [action-dependency-link]: https://github.com/filimor/school-management/actions/workflows/dependency-review.yml
 [action-lint-link]:  https://github.com/filimor/school-management/actions/workflows/super-linter.yml
 [actions-ghpages-link]: https://github.com/filimor/school-management/actions/workflows/pages/pages-build-deployment
+[fossa-link]: https://app.fossa.com/projects/git%2Bgithub.com%2Ffilimor%2Fschool-management?ref=badge_shield
