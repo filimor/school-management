@@ -141,7 +141,7 @@ See also the list of [contributors][contributors] who participated in this proje
 
 ## 📜 License
 
-This project is licensed under the MIT License - see the [License](./LICENSE "MIT") file for details.
+This project is licensed under the GNU Public License version 3.0 - see the [License](./LICENSE "GPLv3") file for details.
 
 [![fossa-image]][fossa-link2]
 

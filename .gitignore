@@ -1189,3 +1189,5 @@ fabric.properties
 
 *.asta.bak
 *.asta.lock
+appsettings.json
+appsettings.Development.json
