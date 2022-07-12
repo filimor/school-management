@@ -9,7 +9,8 @@ English | [Português (Brasil)](./README.pt-BR.md)
 <br>
 <div align="center">
 
-  [![Status][status]]()
+  [![Status][status]][![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Ffilimor%2Fschool-management.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Ffilimor%2Fschool-management?ref=badge_shield)
+()
   ![GitHub repo size][repo-size]
   ![GitHub last commit][last-commit]
   ![License][license]
@@ -40,6 +41,9 @@ English | [Português (Brasil)](./README.pt-BR.md)
 <p align="center"> A simple School Management Web API built with ASP.NET 6 using TDD and Clean Architecture (under development).
   <br>
 </p>
+
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Ffilimor%2Fschool-management.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Ffilimor%2Fschool-management?ref=badge_large)
 
 ## 📝 Table of Contents
 
