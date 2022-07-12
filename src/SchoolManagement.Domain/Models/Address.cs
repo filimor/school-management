@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 using System.Text.RegularExpressions;
+using SchoolManagement.Domain.Exceptions;
 
 namespace SchoolManagement.Domain.Models;
 
@@ -61,26 +62,26 @@ public sealed class Address : Entity
         {
             if (string.IsNullOrWhiteSpace(nameof(property)))
             {
-                throw new ArgumentException($"{property} é um campo obrigatório e deve ter um valor válido.",
-                    nameof(property));
+                throw new DomainException($"{property} é um campo obrigatório e deve ter um valor válido."
+                    );
             }
 
             if (nameof(property).Length is < 5 or > 100)
             {
-                throw new ArgumentException($"O campo {property} deve ter entre 5 e 100 caracteres.", nameof(street));
+                throw new DomainException($"O campo {property} deve ter entre 5 e 100 caracteres." );
             }
         }
 
         if (!States.Contains(state))
         {
-            throw new ArgumentException("O estado é obrigatório e deve ter um valor válido.", nameof(state));
+            throw new DomainException("O estado é obrigatório e deve ter um valor válido." );
         }
 
         ValidateZipCode(zipCode);
 
         if (street2.Length > 50)
         {
-            throw new ArgumentException("O complemento deve possuir no máximo 50 caracteres.", nameof(street2));
+            throw new DomainException("O complemento deve possuir no máximo 50 caracteres.");
         }
     }
 
@@ -89,19 +90,19 @@ public sealed class Address : Entity
         var regex = new Regex("[0-9]{5}-?[\\d]{3}");
         if (!regex.IsMatch(zipCode))
         {
-            throw new ArgumentException("O CEP deve ser um número de 5 dígitos seguido de um traço e 3 dígitos.",
-                nameof(zipCode));
+            throw new DomainException("O CEP deve ser um número de 5 dígitos seguido de um traço e 3 dígitos."
+                );
         }
 
         if (string.IsNullOrWhiteSpace(zipCode))
         {
-            throw new ArgumentException("O CEP é obrigatório.", nameof(zipCode));
+            throw new DomainException("O CEP é obrigatório.");
         }
 
         zipCode = zipCode.Replace("-", "");
         if (zipCode.Length is not 8)
         {
-            throw new ArgumentException("O CEP deve ter 8 dígitos, sem hífem.", nameof(zipCode));
+            throw new DomainException("O CEP deve ter 8 dígitos, sem hífem.");
         }
     }
 }

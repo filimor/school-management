@@ -1,4 +1,5 @@
 ﻿using FluentAssertions;
+using SchoolManagement.Domain.Exceptions;
 using SchoolManagement.Domain.Models;
 using SchoolManagement.Tests.ClassData;
 
@@ -51,7 +52,7 @@ public class AddressTest
             "Apto 101"
         );
 
-        act.Should().Throw<ArgumentException>();
+        act.Should().Throw<DomainException>();
     }
 
     [Theory]
@@ -69,7 +70,7 @@ public class AddressTest
             "Apto 101"
         );
 
-        act.Should().Throw<ArgumentException>();
+        act.Should().Throw<DomainException>();
     }
 
     [Theory]
@@ -87,7 +88,7 @@ public class AddressTest
             "Apto 101"
         );
 
-        act.Should().Throw<ArgumentException>();
+        act.Should().Throw<DomainException>();
     }
 
     [Theory]
@@ -105,7 +106,7 @@ public class AddressTest
             "Apto 101"
         );
 
-        act.Should().Throw<ArgumentException>();
+        act.Should().Throw<DomainException>();
     }
 
     [Theory]
@@ -123,7 +124,7 @@ public class AddressTest
             "Apto 101"
         );
 
-        act.Should().Throw<ArgumentException>();
+        act.Should().Throw<DomainException>();
     }
 
     [Theory]
@@ -141,7 +142,7 @@ public class AddressTest
             "Apto 101"
         );
 
-        act.Should().Throw<ArgumentException>();
+        act.Should().Throw<DomainException>();
     }
 
     [Theory]
@@ -163,7 +164,7 @@ public class AddressTest
             "Apto 101"
         );
 
-        act.Should().Throw<ArgumentException>();
+        act.Should().Throw<DomainException>();
     }
 
     [Theory]
@@ -181,7 +182,7 @@ public class AddressTest
             street2
         );
 
-        act.Should().Throw<ArgumentException>();
+        act.Should().Throw<DomainException>();
     }
 
     [Fact]

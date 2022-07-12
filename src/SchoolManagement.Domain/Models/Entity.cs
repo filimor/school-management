@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using SchoolManagement.Domain.Validations;
 
 namespace SchoolManagement.Domain.Models;
 
@@ -7,16 +8,19 @@ public abstract class Entity
     [Key]
     public int Id { get; }
     public DateTime CreatedAt { get; }
-    public DateTime LastModified { get; private set; }
-    public bool DeletedFlag { get; private set; }
+    public DateTime LastModified { get; protected set; }
+    public bool DeletedFlag { get; protected set; }
 
-    protected Entity(int id)
+    protected Entity()
     {
-        Validate(id);
-        Id = id;
         CreatedAt = DateTime.Now;
         LastModified = DateTime.Now;
         DeletedFlag = false;
+    }
+    protected Entity(int id) : this()
+    {
+        Validate(id);
+        Id = id;
     }
 
     public virtual void Update()
@@ -38,7 +42,6 @@ public abstract class Entity
 
     protected static void Validate(int id)
     {
-        if (id <= 0)
-            throw new ArgumentException("O id deve ser um número inteiro maior do que 1.", nameof(id));
+        DomainValidation.When(id <= 0, "O id deve ser um número inteiro maior ou igual a 1.");
     }
 }

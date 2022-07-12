@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
+using SchoolManagement.Domain.Exceptions;
 
 namespace SchoolManagement.Domain.Models;
 
@@ -44,32 +45,32 @@ public sealed class Student : Entity
     {
         if (string.IsNullOrWhiteSpace(name))
         {
-            throw new ArgumentException("O nome é obrigatório e deve ter um valor válido.", nameof(name));
+            throw new DomainException("O nome é obrigatório e deve ter um valor válido.");
         }
 
         if (name.Length is < 5 or > 100)
         {
-            throw new ArgumentException("O nome deve ter entre 5 e 100 caracteres.", nameof(name));
+            throw new DomainException("O nome deve ter entre 5 e 100 caracteres.");
         }
 
         if (address is null)
         {
-            throw new ArgumentException("O endereço é obrigatório.", nameof(address));
+            throw new DomainException("O endereço é obrigatório.");
         }
 
         if (birthday <= new DateTime(1900, 1, 1) || birthday.Date >= DateTime.Now.Date)
         {
-            throw new ArgumentException("A data de nascimento deve ter um valor válido.", nameof(birthday));
+            throw new DomainException("A data de nascimento deve ter um valor válido.");
         }
 
         if (!Enum.GetValues<Gender>().Contains(gender))
         {
-            throw new ArgumentException("Deve ser selecionado um gênero válido.", nameof(gender));
+            throw new DomainException("Deve ser selecionado um gênero válido.");
         }
 
         if (!Enum.GetValues<SkinColor>().Contains(skinColor))
         {
-            throw new ArgumentException("Deve ser selecionada uma cor válida.", nameof(gender));
+            throw new DomainException("Deve ser selecionada uma cor válida.");
         }
     }
 }

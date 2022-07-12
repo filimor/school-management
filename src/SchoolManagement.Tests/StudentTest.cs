@@ -1,4 +1,5 @@
 ﻿using FluentAssertions;
+using SchoolManagement.Domain.Exceptions;
 using SchoolManagement.Domain.Models;
 using SchoolManagement.Tests.ClassData;
 
@@ -34,7 +35,7 @@ public class StudentTest
             SkinColor.Black
         );
 
-        act.Should().Throw<ArgumentException>();
+        act.Should().Throw<DomainException>();
     }
 
     [Theory]
@@ -50,7 +51,7 @@ public class StudentTest
             SkinColor.Black
         );
 
-        act.Should().Throw<ArgumentException>();
+        act.Should().Throw<DomainException>();
     }
 
     [Fact]
@@ -65,7 +66,7 @@ public class StudentTest
             SkinColor.Black
         );
 
-        act.Should().Throw<ArgumentException>();
+        act.Should().Throw<DomainException>();
     }
 
     [Fact]
@@ -80,7 +81,7 @@ public class StudentTest
             SkinColor.Black
         );
 
-        act.Should().Throw<ArgumentException>();
+        act.Should().Throw<DomainException>();
     }
 
     [Fact]
