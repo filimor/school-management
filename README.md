@@ -22,8 +22,8 @@ English | [Português (Brasil)](./README.pt-BR.md)
   ![GitHub top language][top-language] -->
 
   [![code-climate-shield]][code-climate-link]
-  ![Travis (.org) branch][travis]
-  ![Codecov branch][codecov]
+  [![travis-shield]][travis-link]
+  [![codecov-shield]][codecov-link]
   [![action-dotnet-shield]][action-dotnet-link]
   [![action-build-shield]][action-build-link]
   [![action-codeql-shield]][action-codeql-link]
@@ -161,13 +161,15 @@ This project is licensed under the GNU Public License version 3.0 - see the [Lic
 [actions-ghpages-shield]: https://github.com/filimor/school-management/actions/workflows/pages/pages-build-deployment/badge.svg
 [code-climate-shield]: https://api.codeclimate.com/v1/badges/bb1611309b93f8822b90/maintainability
 [fossa-shield]: https://app.fossa.com/api/projects/git%2Bgithub.com%2Ffilimor%2Fschool-management.svg?type=shield
+[codecov-shield]: https://codecov.io/gh/filimor/school-management/branch/main/graph/badge.svg?token=cnBHSjPQEZ
+[travis-shield]: https://app.travis-ci.com/filimor/school-management.svg?branch=main
 
 <!-- LINKS -->
 [test]: https://link
 
 [code-climate-link]: https://codeclimate.com/github/filimor/school-management/maintainability
-[travis]: https://img.shields.io/travis/filimor/school-management/main
-[codecov]: https://img.shields.io/codecov/c/github/filimor/school-management/main?token=d0611830-0b3b-4ddd-aa02-7917bb402501
+[travis-link]: https://app.travis-ci.com/filimor/school-management
+[codecov-link]: https://codecov.io/gh/filimor/school-management
 [requires-io]: https://img.shields.io/requires/github/filimor/school-management/main
 [issues]: https://img.shields.io/github/issues-raw/filimor/school-management
 [pull-requests]: https://img.shields.io/github/issues-pr-raw/filimor/school-management
