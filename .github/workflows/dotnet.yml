@@ -20,8 +20,8 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore ./src/SchoolManagement.sln
     - name: Build
-      run: dotnet build ./src/SchoolManagement.sln --no-restore
+      run: dotnet build ./src/SchoolManagement.sln --no-restore /p:ContinuousIntegrationBuild=true
     - name: Test
-      run: dotnet test ./src/SchoolManagement.sln --no-build --verbosity normal
+      run: dotnet test ./src/SchoolManagement.sln --no-build --verbosity normal /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
     - name: Codecov
       uses: codecov/codecov-action@v3.1.0
