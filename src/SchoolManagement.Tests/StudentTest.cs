@@ -1,5 +1,6 @@
 ﻿using FluentAssertions;
 using SchoolManagement.Domain.Models;
+using SchoolManagement.Tests.ClassData;
 
 namespace SchoolManagement.Tests;
 
@@ -37,7 +38,7 @@ public class StudentTest
     }
 
     [Theory]
-    [MemberData(nameof(InvalidNames))]
+    [ClassData(typeof(InvalidStringsClassData))]
     public void Should_Not_Create_Student_With_Invalid_Name(string name)
     {
         var act = () => new Student(
@@ -110,26 +111,14 @@ public class StudentTest
     private static Address FakeAddress()
     {
         return new Address(
-            1,
-            "Rua dos Bobos",
-            "10",
+            id:1,
+            street:"Rua dos Bobos",
+            number:"10",
             street2: "Apto 101",
             district: "Centro",
             city: "São Paulo",
             state: "SP",
             zipCode: "01310-000"
         );
-    }
-
-    private static IEnumerable<object[]> InvalidNames()
-    {
-        return new[]
-        {
-            new object[] { "" },
-            new object[] { " " },
-            new object[] { null! },
-            new object[] { new string('a', 5 - 1) },
-            new object[] { new string('a', 100 + 1) }
-        };
     }
 }
