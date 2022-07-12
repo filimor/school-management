@@ -9,8 +9,7 @@ English | [Português (Brasil)](./README.pt-BR.md)
 <br>
 <div align="center">
 
-  [![Status][status]][![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Ffilimor%2Fschool-management.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Ffilimor%2Fschool-management?ref=badge_shield)
-()
+  ![Status][status]
   ![GitHub repo size][repo-size]
   ![GitHub last commit][last-commit]
   ![License][license]
@@ -22,15 +21,15 @@ English | [Português (Brasil)](./README.pt-BR.md)
   ![GitHub language count][language-count]
   ![GitHub top language][top-language] -->
 
-  [![Maintainability][code-climate-shield]][code-climate-link]
+  [![code-climate-shield]][code-climate-link]
   ![Travis (.org) branch][travis]
   ![Codecov branch][codecov]
-  [![Tests][action-dotnet-shield]][action-dotnet-link]
-  [![Deploy][action-build-shield]][action-build-link]
-  [![CodeQL][action-codeql-shield]][action-codeql-link]
-  [![Dependencies][action-dependency-shield]][action-dependency-link]
-  [![Linter][action-lint-shield]][action-lint-link]
-  [![FOSSA Status][fossa-shield]][fossa-link]
+  [![action-dotnet-shield]][action-dotnet-link]
+  [![action-build-shield]][action-build-link]
+  [![action-codeql-shield]][action-codeql-link]
+  [![action-dependency-shield]][action-dependency-link]
+  [![action-lint-shield]][action-lint-link]
+  [![fossa-shield]][fossa-link]
   <!-- [![actions-ghpages-shield]][actions-ghpages-link] -->
   <!-- ![Requires.io (branch)][requires-io] -->
 
@@ -41,9 +40,6 @@ English | [Português (Brasil)](./README.pt-BR.md)
 <p align="center"> A simple School Management Web API built with ASP.NET 6 using TDD and Clean Architecture (under development).
   <br>
 </p>
-
-
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Ffilimor%2Fschool-management.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Ffilimor%2Fschool-management?ref=badge_large)
 
 ## 📝 Table of Contents
 
@@ -147,6 +143,8 @@ See also the list of [contributors][contributors] who participated in this proje
 
 This project is licensed under the MIT License - see the [License](./LICENSE "MIT") file for details.
 
+[![fossa-image]][fossa-link2]
+
 ## 🎉 Acknowledgements <a name = "acknowledgement"></a>
 
 - [The-Documentation-Compendium](https://github.com/kylelobo/The-Documentation-Compendium)
@@ -189,3 +187,7 @@ This project is licensed under the MIT License - see the [License](./LICENSE "MI
 [action-lint-link]:  https://github.com/filimor/school-management/actions/workflows/super-linter.yml
 [actions-ghpages-link]: https://github.com/filimor/school-management/actions/workflows/pages/pages-build-deployment
 [fossa-link]: https://app.fossa.com/projects/git%2Bgithub.com%2Ffilimor%2Fschool-management?ref=badge_shield
+[fossa-link2]: https://app.fossa.com/projects/git%2Bgithub.com%2Ffilimor%2Fschool-management?ref=badge_large
+
+<!--IMAGES -->
+[fossa-image]: https://app.fossa.com/api/projects/git%2Bgithub.com%2Ffilimor%2Fschool-management.svg?type=large
