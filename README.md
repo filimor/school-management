@@ -1,4 +1,4 @@
-English | [Português (Brasil)](./README.pt-BR.md)
+#
 
 <p align="center">
   <a href="" rel="noopener">
@@ -35,7 +35,7 @@ English | [Português (Brasil)](./README.pt-BR.md)
 
 ---
 
-<p align="center"> A simple School Management Web API built with ASP.NET 6 using TDD and Clean Architecture (under development).
+<p align="center"> English | <a href="./README.pt-BR.md">Português (Brasil)</a><br><br>A simple School Management Web API built with ASP.NET 6 using TDD and Clean Architecture (under development).
   <br>
 </p>
 
@@ -46,7 +46,7 @@ English | [Português (Brasil)](./README.pt-BR.md)
 - [Deployment](#deployment)
 - [Usage](#usage)
 - [Built Using](#built_using)
-- [TODO](../TODO.md)
+- [TODO](./TODO.md)
 - [Contributing](#contributing)
 - [Authors](#authors)
 - [Acknowledgments](#acknowledgement)
