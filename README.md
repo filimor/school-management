@@ -13,6 +13,17 @@ English | [Português (Brasil)](./README.pt-BR.md)
   ![GitHub repo size][repo-size]
   ![GitHub last commit][last-commit]
   ![License][license]
+  [![code-climate-shield]][code-climate-link]
+  [![codecov-shield]][codecov-link]
+  [![fossa-shield]][fossa-link]
+  [![action-codeql-shield]][action-codeql-link]
+  [![action-lint-shield]][action-lint-link]
+  [![action-dependency-shield]][action-dependency-link]
+  [![travis-shield]][travis-link]
+  [![action-dotnet-shield]][action-dotnet-link]
+  [![action-build-shield]][action-build-link]
+  <!-- [![actions-ghpages-shield]][actions-ghpages-link] -->
+  <!-- ![Requires.io (branch)][requires-io] -->
   <!-- ![GitHub issues][issues]
   ![GitHub pull requests][pull-requests]
   ![GitHub forks][forks]
@@ -20,19 +31,6 @@ English | [Português (Brasil)](./README.pt-BR.md)
   <!-- ![GitHub All Releases][releases]
   ![GitHub language count][language-count]
   ![GitHub top language][top-language] -->
-
-  [![code-climate-shield]][code-climate-link]
-  [![travis-shield]][travis-link]
-  [![codecov-shield]][codecov-link]
-  [![action-dotnet-shield]][action-dotnet-link]
-  [![action-build-shield]][action-build-link]
-  [![action-codeql-shield]][action-codeql-link]
-  [![action-dependency-shield]][action-dependency-link]
-  [![action-lint-shield]][action-lint-link]
-  [![fossa-shield]][fossa-link]
-  <!-- [![actions-ghpages-shield]][actions-ghpages-link] -->
-  <!-- ![Requires.io (branch)][requires-io] -->
-
 </div>
 
 ---
