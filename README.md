@@ -166,9 +166,9 @@ This project is licensed under the MIT License - see the [License](./LICENSE "MI
 [test]: https://link
 
 [code-climate-link]: https://codeclimate.com/github/filimor/school-management/maintainability
-[travis]: https://img.shields.io/travis/filimor/school-management/master
-[codecov]: https://img.shields.io/codecov/c/github/filimor/school-management/master?token=d0611830-0b3b-4ddd-aa02-7917bb402501
-[requires-io]: https://img.shields.io/requires/github/filimor/school-management/master
+[travis]: https://img.shields.io/travis/filimor/school-management/main
+[codecov]: https://img.shields.io/codecov/c/github/filimor/school-management/main?token=d0611830-0b3b-4ddd-aa02-7917bb402501
+[requires-io]: https://img.shields.io/requires/github/filimor/school-management/main
 [issues]: https://img.shields.io/github/issues-raw/filimor/school-management
 [pull-requests]: https://img.shields.io/github/issues-pr-raw/filimor/school-management
 [forks]: https://img.shields.io/github/forks/filimor/school-management
