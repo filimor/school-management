@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 
 namespace SchoolManagement.Domain.Models;
 
-public sealed class Address
+public sealed class Address : Entity
 {
     private static readonly string[] States =
     {
@@ -13,10 +13,9 @@ public sealed class Address
     };
 
     public Address(int id, string street, string number, string district, string city = "São Paulo",
-        string state = "SP", string zipCode = "", string street2 = "")
+        string state = "SP", string zipCode = "", string street2 = "") : base(id)
     {
-        Validate(id, street, number, district, city, state, zipCode, street2);
-        Id = id;
+        Validate(street, number, district, city, state, zipCode, street2);
         Street = street;
         Number = number;
         Street2 = street2;
@@ -26,7 +25,6 @@ public sealed class Address
         ZipCode = zipCode;
     }
 
-    [Key] public int Id { get; }
 
     [Required] public string Street { get; private set; }
 
@@ -45,7 +43,7 @@ public sealed class Address
     public void Update(string street, string number, string district, string city, string state, string zipCode,
         string street2)
     {
-        Validate(Id, street, number, district, city, state, zipCode, street2);
+        Validate(street, number, district, city, state, zipCode, street2);
         Street = street;
         Number = number;
         Street2 = street2;
@@ -56,29 +54,38 @@ public sealed class Address
     }
 
     [SuppressMessage("ReSharper", "ParameterOnlyUsedForPreconditionCheck.Local")]
-    private static void Validate(int id, string street, string number, string district, string city, string state,
+    private static void Validate(string street, string number, string district, string city, string state,
         string zipCode, string street2)
     {
-        if (id <= 0)
-            throw new ArgumentException("O id deve ser um número inteiro maior do que 1.", nameof(id));
-        if (string.IsNullOrWhiteSpace(street))
-            throw new ArgumentException("O logradouro é obrigatório e deve ter um valor válido.", nameof(street));
-        if (street.Length is < 5 or > 100)
-            throw new ArgumentException("O logradouro deve ter entre 5 e 100 caracteres.", nameof(street));
-        if (string.IsNullOrWhiteSpace(number))
-            throw new ArgumentException("O número é obrigatório e deve ter um valor válido.", nameof(number));
-        if (number.Length > 10)
-            throw new ArgumentException("O número deve conter entre 1 e 10 caracteres.", nameof(number));
-        if (string.IsNullOrWhiteSpace(district))
-            throw new ArgumentException("O bairro é obrigatório e deve ter um valor válido.", nameof(district));
-        if (district.Length is < 5 or > 100)
-            throw new ArgumentException("O bairro deve ter entre 5 e 100 caracteres.", nameof(district));
-        if (string.IsNullOrWhiteSpace(city))
-            throw new ArgumentException("A cidade é obrigatória e deve ter um valor válido.", nameof(city));
-        if (city.Length is < 5 or > 100)
-            throw new ArgumentException("A cidade deve ter entre 5 e 100 caracteres.", nameof(city));
+        foreach (var property in new[] { street, number, district, city })
+        {
+            if (string.IsNullOrWhiteSpace(nameof(property)))
+            {
+                throw new ArgumentException($"{property} é um campo obrigatório e deve ter um valor válido.",
+                    nameof(property));
+            }
+
+            if (nameof(property).Length is < 5 or > 100)
+            {
+                throw new ArgumentException($"O campo {property} deve ter entre 5 e 100 caracteres.", nameof(street));
+            }
+        }
+
         if (!States.Contains(state))
+        {
             throw new ArgumentException("O estado é obrigatório e deve ter um valor válido.", nameof(state));
+        }
+
+        ValidateZipCode(zipCode);
+
+        if (street2.Length > 50)
+        {
+            throw new ArgumentException("O complemento deve possuir no máximo 50 caracteres.", nameof(street2));
+        }
+    }
+
+    private static void ValidateZipCode(string zipCode)
+    {
         var regex = new Regex("[0-9]{5}-?[\\d]{3}");
         if (!regex.IsMatch(zipCode))
         {
@@ -87,11 +94,14 @@ public sealed class Address
         }
 
         if (string.IsNullOrWhiteSpace(zipCode))
+        {
             throw new ArgumentException("O CEP é obrigatório.", nameof(zipCode));
+        }
+
         zipCode = zipCode.Replace("-", "");
         if (zipCode.Length is not 8)
+        {
             throw new ArgumentException("O CEP deve ter 8 dígitos, sem hífem.", nameof(zipCode));
-        if (street2.Length > 50)
-            throw new ArgumentException("O complemento deve possuir no máximo 50 caracteres.", nameof(street2));
+        }
     }
 }
