@@ -42,6 +42,7 @@
 ## 📝 Table of Contents
 
 - [About](#about)
+- [Documentation](./docs/index.md)
 - [Getting Started](#getting_started)
 - [Deployment](#deployment)
 - [Usage](#usage)
