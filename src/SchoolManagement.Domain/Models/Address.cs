@@ -17,6 +17,12 @@ public sealed class Address : Entity
         Initialize(street, number, district, city, state, zipCode, street2);
     }
 
+    public Address(string street, string number, string district, string city = "São Paulo",
+        string state = "SP", string zipCode = "", string street2 = "")
+    {
+        Initialize(street, number, district, city, state, zipCode, street2);
+    }
+
 
     public string Street { get; private set; } = null!;
 
@@ -31,6 +37,8 @@ public sealed class Address : Entity
     public string State { get; private set; } = null!;
 
     public string ZipCode { get; private set; } = null!;
+
+    public Student? Student { get; set; }
 
     public void Update(string street, string number, string district, string city, string state, string zipCode,
         string street2)
