@@ -17,12 +17,13 @@
 # For more information on the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # For more samples to get started with GitHub Action workflows to deploy to Azure: https://github.com/Azure/actions-workflow-samples
 
-name: Deploy
+name: publish
 
 env:
-  AZURE_WEBAPP_NAME: school-management    # set this to the name of your Azure Web App
-  AZURE_WEBAPP_PACKAGE_PATH: 'src/'      # set this to the path to your web app project, defaults to the repository root
-  DOTNET_VERSION: '6'                 # set this to the .NET Core version to use
+  AZURE_WEBAPP_NAME: SchoolManagementApi    # set this to the name of your Azure Web App
+  AZURE_WEBAPP_PACKAGE_PATH: '.'      # set this to the path to your web app project, defaults to the repository root
+  DOTNET_VERSION: '6.0.x'                 # set this to the .NET Core version to use
+  SRC_PATH: ./src/SchoolManagement.sln
 
 on:
   push:
@@ -44,7 +45,7 @@ jobs:
         uses: actions/setup-dotnet@v2
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
-      
+
       - name: Set up dependency caching for faster builds
         uses: actions/cache@v3
         with:
@@ -54,10 +55,10 @@ jobs:
             ${{ runner.os }}-nuget-
 
       - name: Build with dotnet
-        run: dotnet build --configuration Release
+        run: dotnet build ${{env.SRC_PATH}} --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
+        run: dotnet publish ${{env.SRC_PATH}} -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3

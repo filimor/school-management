@@ -1,4 +1,4 @@
-English | [Português (Brasil)](./README.pt-BR.md)
+#
 
 <p align="center">
   <a href="" rel="noopener">
@@ -9,10 +9,21 @@ English | [Português (Brasil)](./README.pt-BR.md)
 <br>
 <div align="center">
 
-  [![Status][status]]()
+  ![Status][status]
   ![GitHub repo size][repo-size]
   ![GitHub last commit][last-commit]
   ![License][license]
+  [![code-climate-shield]][code-climate-link]
+  [![codecov-shield]][codecov-link]
+  [![fossa-shield]][fossa-link]
+  [![action-codeql-shield]][action-codeql-link]
+  [![action-lint-shield]][action-lint-link]
+  [![action-dependency-shield]][action-dependency-link]
+  [![travis-shield]][travis-link]
+  [![action-dotnet-shield]][action-dotnet-link]
+  [![action-build-shield]][action-build-link]
+  <!-- [![actions-ghpages-shield]][actions-ghpages-link] -->
+  <!-- ![Requires.io (branch)][requires-io] -->
   <!-- ![GitHub issues][issues]
   ![GitHub pull requests][pull-requests]
   ![GitHub forks][forks]
@@ -20,24 +31,11 @@ English | [Português (Brasil)](./README.pt-BR.md)
   <!-- ![GitHub All Releases][releases]
   ![GitHub language count][language-count]
   ![GitHub top language][top-language] -->
-
-  [![Maintainability][code-climate-shield]][code-climate-link]
-  ![Travis (.org) branch][travis]
-  ![Codecov branch][codecov]
-  [![Tests][action-dotnet-shield]][action-dotnet-link]
-  [![Deploy][action-build-shield]][action-build-link]
-  [![CodeQL][action-codeql-shield]][action-codeql-link]
-  [![Dependencies][action-dependency-shield]][action-dependency-link]
-  [![Linter][action-lint-shield]][action-lint-link]
-  [![FOSSA Status][fossa-shield]][fossa-link]
-  <!-- [![actions-ghpages-shield]][actions-ghpages-link] -->
-  <!-- ![Requires.io (branch)][requires-io] -->
-
 </div>
 
 ---
 
-<p align="center"> A simple School Management Web API built with ASP.NET 6 using TDD and Clean Architecture (under development).
+<p align="center"> English | <a href="./README.pt-BR.md">Português (Brasil)</a><br><br>A simple School Management Web API built with ASP.NET 6 using TDD and Clean Architecture (under development).
   <br>
 </p>
 
@@ -48,7 +46,7 @@ English | [Português (Brasil)](./README.pt-BR.md)
 - [Deployment](#deployment)
 - [Usage](#usage)
 - [Built Using](#built_using)
-- [TODO](../TODO.md)
+- [TODO](./TODO.md)
 - [Contributing](#contributing)
 - [Authors](#authors)
 - [Acknowledgments](#acknowledgement)
@@ -91,7 +89,7 @@ End with an example of getting some data out of the system or using it for a lit
 
 {TODO} Explain how to run the automated tests for this system.
 
-### Break down into end to end tests
+### Break down into end-to-end tests
 
 {TODO} Explain what these tests test and why
 
@@ -141,7 +139,9 @@ See also the list of [contributors][contributors] who participated in this proje
 
 ## 📜 License
 
-This project is licensed under the MIT License - see the [License](./LICENSE "MIT") file for details.
+This project is licensed under the GNU Public License version 3.0 - see the [License](./LICENSE "GPLv3") file for details.
+
+[![fossa-image]][fossa-link2]
 
 ## 🎉 Acknowledgements <a name = "acknowledgement"></a>
 
@@ -159,14 +159,16 @@ This project is licensed under the MIT License - see the [License](./LICENSE "MI
 [actions-ghpages-shield]: https://github.com/filimor/school-management/actions/workflows/pages/pages-build-deployment/badge.svg
 [code-climate-shield]: https://api.codeclimate.com/v1/badges/bb1611309b93f8822b90/maintainability
 [fossa-shield]: https://app.fossa.com/api/projects/git%2Bgithub.com%2Ffilimor%2Fschool-management.svg?type=shield
+[codecov-shield]: https://codecov.io/gh/filimor/school-management/branch/main/graph/badge.svg?token=cnBHSjPQEZ
+[travis-shield]: https://app.travis-ci.com/filimor/school-management.svg?branch=main
 
 <!-- LINKS -->
 [test]: https://link
 
 [code-climate-link]: https://codeclimate.com/github/filimor/school-management/maintainability
-[travis]: https://img.shields.io/travis/filimor/school-management/master
-[codecov]: https://img.shields.io/codecov/c/github/filimor/school-management/master?token=d0611830-0b3b-4ddd-aa02-7917bb402501
-[requires-io]: https://img.shields.io/requires/github/filimor/school-management/master
+[travis-link]: https://app.travis-ci.com/filimor/school-management
+[codecov-link]: https://codecov.io/gh/filimor/school-management
+[requires-io]: https://img.shields.io/requires/github/filimor/school-management/main
 [issues]: https://img.shields.io/github/issues-raw/filimor/school-management
 [pull-requests]: https://img.shields.io/github/issues-pr-raw/filimor/school-management
 [forks]: https://img.shields.io/github/forks/filimor/school-management
@@ -185,3 +187,7 @@ This project is licensed under the MIT License - see the [License](./LICENSE "MI
 [action-lint-link]:  https://github.com/filimor/school-management/actions/workflows/super-linter.yml
 [actions-ghpages-link]: https://github.com/filimor/school-management/actions/workflows/pages/pages-build-deployment
 [fossa-link]: https://app.fossa.com/projects/git%2Bgithub.com%2Ffilimor%2Fschool-management?ref=badge_shield
+[fossa-link2]: https://app.fossa.com/projects/git%2Bgithub.com%2Ffilimor%2Fschool-management?ref=badge_large
+
+<!--IMAGES -->
+[fossa-image]: https://app.fossa.com/api/projects/git%2Bgithub.com%2Ffilimor%2Fschool-management.svg?type=large
