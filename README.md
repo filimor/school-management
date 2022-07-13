@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="" rel="noopener">
- <img width=200px height=200px src="https://i.imgur.com/6wj0hh6.jpg" alt="Project logo"></a>
+ <img width=200px height=200px src="logo.png" alt="Project logo"></a>
 </p>
 
 <h3 align="center">School Management</h3>
@@ -115,7 +115,7 @@ Give an example
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
-- [Visal Studio 2022](https://visualstudio.microsoft.com/vs/)
+- [Visual Studio 2022](https://visualstudio.microsoft.com/vs/)
 - [ASP.NET 6](https://docs.microsoft.com/en-us/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-6.0)
 - [Entity Framework 6](https://docs.microsoft.com/en-us/ef/core/)
 - [SQL Server 2019](https://www.microsoft.com/pt-br/sql-server/sql-server-2019)
@@ -129,7 +129,7 @@ Check out the [contribution guidelines](./CONTRIBUTING.md) and follow our [code 
 
 - [@filimor](https://github.com/filimor/) - Idea & Initial work
 
-See also the list of [contributors][contributors] who participated in this project.
+<!-- See also the list of [contributors][contributors] who participated in this project. -->
 
 ### Contact
 
