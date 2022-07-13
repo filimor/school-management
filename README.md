@@ -64,15 +64,15 @@
 
 {TODO} What things you need to install the software and how to install them.
 
-```
+<!-- ```
 Give examples
-```
+``` -->
 
 ### Installing
 
 {TODO} A step by step series of examples that tell you how to get a development env running.
 
-Say what the step will be
+<!-- Say what the step will be
 
 ```
 Give the example
@@ -82,7 +82,7 @@ And repeat
 
 ```
 until finished
-```
+``` -->
 
 End with an example of getting some data out of the system or using it for a little demo.
 
@@ -94,17 +94,17 @@ End with an example of getting some data out of the system or using it for a lit
 
 {TODO} Explain what these tests test and why
 
-```
+<!-- ```
 Give an example
-```
+``` -->
 
 ### And coding style tests
 
 {TODO} Explain what these tests test and why
 
-```
+<!-- ```
 Give an example
-```
+``` -->
 
 ## 💿 Usage <a name="usage"></a>
 
@@ -135,8 +135,8 @@ Check out the [contribution guidelines](./CONTRIBUTING.md) and follow our [code 
 ### Contact
 
 - E-mail: filimor@posteo.net
-- LinkedIn: https://www.linkedin.com/in/filimor/
-- Twitter: https://www.twitter.com/filimorbr/
+- LinkedIn: [https://www.linkedin.com/in/filimor/](https://www.linkedin.com/in/filimor/)
+- Twitter: [https://www.twitter.com/filimorbr/](https://www.twitter.com/filimorbr/)
 
 ## 📜 License
 
