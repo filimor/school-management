@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolManagement.Infrastruc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolManagement.Api", "SchoolManagement.Api\SchoolManagement.Api.csproj", "{9DFBE563-8360-4890-A543-5E414E204064}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolManagement.Tests", "SchoolManagement.Tests\SchoolManagement.Tests.csproj", "{77C8DEE4-D267-458A-818A-BE181D3783DD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolManagement.Domain.Tests", "SchoolManagement.Domain.Tests\SchoolManagement.Domain.Tests.csproj", "{91EB3D4D-1311-4033-BA85-CD5165C6EB17}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +41,10 @@ Global
 		{9DFBE563-8360-4890-A543-5E414E204064}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9DFBE563-8360-4890-A543-5E414E204064}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9DFBE563-8360-4890-A543-5E414E204064}.Release|Any CPU.Build.0 = Release|Any CPU
-		{77C8DEE4-D267-458A-818A-BE181D3783DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{77C8DEE4-D267-458A-818A-BE181D3783DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{77C8DEE4-D267-458A-818A-BE181D3783DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{77C8DEE4-D267-458A-818A-BE181D3783DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91EB3D4D-1311-4033-BA85-CD5165C6EB17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91EB3D4D-1311-4033-BA85-CD5165C6EB17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91EB3D4D-1311-4033-BA85-CD5165C6EB17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91EB3D4D-1311-4033-BA85-CD5165C6EB17}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -9,6 +9,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="coverlet.msbuild" Version="3.1.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="FluentAssertions" Version="6.7.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
     <PackageReference Include="coverlet.msbuild" Version="3.1.2">
       <PrivateAssets>all</PrivateAssets>
@@ -26,11 +31,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SchoolManagement.Api\SchoolManagement.Api.csproj" />
-    <ProjectReference Include="..\SchoolManagement.Application\SchoolManagement.Application.csproj" />
     <ProjectReference Include="..\SchoolManagement.Domain\SchoolManagement.Domain.csproj" />
-    <ProjectReference Include="..\SchoolManagement.Infrastructure\SchoolManagement.Infrastructure.csproj" />
-    <ProjectReference Include="..\SchoolManagemet.CrossCutting\SchoolManagement.CrossCutting.csproj" />
   </ItemGroup>
 
 </Project>
