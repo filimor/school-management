@@ -1,7 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.Diagnostics.CodeAnalysis;
-using System.Text.RegularExpressions;
-using SchoolManagement.Domain.Exceptions;
+﻿using System.Text.RegularExpressions;
+using SchoolManagement.Domain.Validations;
 
 namespace SchoolManagement.Domain.Models;
 
@@ -16,32 +14,31 @@ public sealed class Address : Entity
     public Address(int id, string street, string number, string district, string city = "São Paulo",
         string state = "SP", string zipCode = "", string street2 = "") : base(id)
     {
-        Validate(street, number, district, city, state, zipCode, street2);
-        Street = street;
-        Number = number;
-        Street2 = street2;
-        District = district;
-        City = city;
-        State = state;
-        ZipCode = zipCode;
+        Initialize(street, number, district, city, state, zipCode, street2);
     }
 
 
-    [Required] public string Street { get; private set; }
+    public string Street { get; private set; } = null!;
 
-    [Required] public string Number { get; private set; }
+    public string Number { get; private set; } = null!;
 
-    public string Street2 { get; private set; }
+    public string Street2 { get; private set; } = null!;
 
-    [Required] public string District { get; private set; }
+    public string District { get; private set; } = null!;
 
-    [Required] public string City { get; private set; }
+    public string City { get; private set; } = null!;
 
-    [Required] public string State { get; private set; }
+    public string State { get; private set; } = null!;
 
-    [Required] public string ZipCode { get; private set; }
+    public string ZipCode { get; private set; } = null!;
 
     public void Update(string street, string number, string district, string city, string state, string zipCode,
+        string street2)
+    {
+        Initialize(street, number, district, city, state, zipCode, street2);
+    }
+
+    private void Initialize(string street, string number, string district, string city, string state, string zipCode,
         string street2)
     {
         Validate(street, number, district, city, state, zipCode, street2);
@@ -54,55 +51,35 @@ public sealed class Address : Entity
         ZipCode = zipCode;
     }
 
-    [SuppressMessage("ReSharper", "ParameterOnlyUsedForPreconditionCheck.Local")]
     private static void Validate(string street, string number, string district, string city, string state,
         string zipCode, string street2)
     {
-        foreach (var property in new[] { street, number, district, city })
-        {
-            if (string.IsNullOrWhiteSpace(nameof(property)))
-            {
-                throw new DomainException($"{property} é um campo obrigatório e deve ter um valor válido."
-                    );
-            }
+        DomainValidation.When(string.IsNullOrWhiteSpace(street),
+            "O Logradouro é obrigatório e não pode ter um valor vazio.");
+        DomainValidation.When(street.Length is < 5 or > 100,
+            "O Logradouro deve ter entre 5 e 100 caracteres.");
 
-            if (nameof(property).Length is < 5 or > 100)
-            {
-                throw new DomainException($"O campo {property} deve ter entre 5 e 100 caracteres." );
-            }
-        }
+        DomainValidation.When(string.IsNullOrWhiteSpace(district),
+            "O Bairro é obrigatório e não pode ter um valor vazio.");
+        DomainValidation.When(district.Length is < 5 or > 100,
+            "O Bairro deve ter entre 5 e 100 caracteres.");
 
-        if (!States.Contains(state))
-        {
-            throw new DomainException("O estado é obrigatório e deve ter um valor válido." );
-        }
+        DomainValidation.When(string.IsNullOrWhiteSpace(city),
+            "A cidade é obrigatória e não pode ter um valor vazio.");
+        DomainValidation.When(city.Length is < 5 or > 100,
+            "A cidade deve ter entre 5 e 100 caracteres.");
 
-        ValidateZipCode(zipCode);
+        DomainValidation.When(string.IsNullOrWhiteSpace(number),
+            "O Número é obrigatório e não pode ter um valor vazio.");
+        DomainValidation.When(number.Length is < 1 or > 10,
+            "O Número é obrigatório e deve ter entre 1 e 10 caracteres.");
 
-        if (street2.Length > 50)
-        {
-            throw new DomainException("O complemento deve possuir no máximo 50 caracteres.");
-        }
-    }
+        DomainValidation.When(!States.Contains(state),
+            "O Estado é obrigatório e deve ter um valor válido com 2 caracteres.");
+        DomainValidation.When(street2.Length > 50, "O complemento deve possuir no máximo 50 caracteres.");
 
-    private static void ValidateZipCode(string zipCode)
-    {
-        var regex = new Regex("[0-9]{5}-?[\\d]{3}");
-        if (!regex.IsMatch(zipCode))
-        {
-            throw new DomainException("O CEP deve ser um número de 5 dígitos seguido de um traço e 3 dígitos."
-                );
-        }
-
-        if (string.IsNullOrWhiteSpace(zipCode))
-        {
-            throw new DomainException("O CEP é obrigatório.");
-        }
-
-        zipCode = zipCode.Replace("-", "");
-        if (zipCode.Length is not 8)
-        {
-            throw new DomainException("O CEP deve ter 8 dígitos, sem hífem.");
-        }
+        var regex = new Regex(@"^([0-9]{5}-[\d]{3})$");
+        DomainValidation.When(!regex.IsMatch(zipCode),
+            "O CEP é obrigatório e deve possuir 5 dígitos, um traço e mais 3 dígitos.");
     }
 }

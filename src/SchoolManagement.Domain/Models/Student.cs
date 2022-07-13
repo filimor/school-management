@@ -1,5 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.Diagnostics.CodeAnalysis;
+﻿using System.Diagnostics.CodeAnalysis;
 using SchoolManagement.Domain.Exceptions;
 
 namespace SchoolManagement.Domain.Models;
@@ -17,15 +16,15 @@ public sealed class Student : Entity
         SkinColor = skinColor;
     }
 
-    [Required] public string Name { get; private set; }
+    public string Name { get; private set; }
 
-    [Required] public Address Address { get; private set; }
+    public Address Address { get; private set; }
 
-    [Required] public DateTime Birthday { get; private set; }
+    public DateTime Birthday { get; private set; }
 
-    [Required] public Gender Gender { get; private set; }
+    public Gender Gender { get; private set; }
 
-    [Required] public SkinColor SkinColor { get; private set; }
+    public SkinColor SkinColor { get; private set; }
 
     public void Update(string name, Address address, DateTime birthday, Gender gender,
         SkinColor skinColor)

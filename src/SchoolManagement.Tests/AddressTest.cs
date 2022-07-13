@@ -74,7 +74,7 @@ public class AddressTest
     }
 
     [Theory]
-    [ClassData(typeof(InvalidStringsClassData))]
+    [MemberData(nameof(InvalidAddressNumbers))]
     public void Should_Not_Create_Address_With_Invalid_Number(string number)
     {
         var act = () => new Address(
@@ -146,10 +146,12 @@ public class AddressTest
     }
 
     [Theory]
-    [InlineData("111111-111")]
-    [InlineData("1111-111")]
-    [InlineData("111111111")]
-    [InlineData("1111111")]
+    [InlineData("123456-789")]
+    [InlineData("1234-567")]
+    [InlineData("1234-5678")]
+    [InlineData("123456789")]
+    [InlineData("1234567")]
+    [InlineData("12345678")]
     [InlineData("1234567a")]
     public void Should_Not_Create_Address_With_Invalid_ZipCode(string zipCode)
     {
@@ -168,7 +170,7 @@ public class AddressTest
     }
 
     [Theory]
-    [ClassData(typeof(InvalidStringsClassData))]
+    [MemberData(nameof(InvalidAddressComplements))]
     public void Should_Not_Create_Address_With_Invalid_Street2(string street2)
     {
         var act = () => new Address(
@@ -248,6 +250,25 @@ public class AddressTest
             new object[] { "SP" },
             new object[] { "SE" },
             new object[] { "TO" }
+        };
+    }
+
+    private static IEnumerable<object[]> InvalidAddressNumbers()
+    {
+        return new[]
+        {
+            new object[] { "" },
+            new object[] { " " },
+            new object[] { null! },
+            new object[] { new string('a', 10 + 1) }
+        };
+    }
+
+    private static IEnumerable<object[]> InvalidAddressComplements()
+    {
+        return new[]
+        {
+            new object[] { new string('a', 50 + 1) }
         };
     }
 }
