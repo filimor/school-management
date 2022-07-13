@@ -36,6 +36,7 @@ public sealed class Address : Entity
         string street2)
     {
         Initialize(street, number, district, city, state, zipCode, street2);
+        Update();
     }
 
     private void Initialize(string street, string number, string district, string city, string state, string zipCode,
