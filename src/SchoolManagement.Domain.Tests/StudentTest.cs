@@ -1,9 +1,9 @@
 ﻿using FluentAssertions;
 using SchoolManagement.Domain.Exceptions;
 using SchoolManagement.Domain.Models;
-using SchoolManagement.Tests.ClassData;
+using SchoolManagement.Domain.Tests.ClassData;
 
-namespace SchoolManagement.Tests;
+namespace SchoolManagement.Domain.Tests;
 
 public class StudentTest
 {

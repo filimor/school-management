@@ -11,14 +11,15 @@ public sealed class Address : Entity
         "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO"
     };
 
-    public Address(int id, string street, string number, string district, string city = "São Paulo",
-        string state = "SP", string zipCode = "", string street2 = "") : base(id)
+    public Address(int id, string street, string number, string district, string zipCode,
+        string city = "São Paulo",
+        string state = "SP", string street2 = "") : base(id)
     {
         Initialize(street, number, district, city, state, zipCode, street2);
     }
 
-    public Address(string street, string number, string district, string city = "São Paulo",
-        string state = "SP", string zipCode = "", string street2 = "")
+    public Address(string street, string number, string district, string zipCode, string city = "São Paulo",
+        string state = "SP", string street2 = "")
     {
         Initialize(street, number, district, city, state, zipCode, street2);
     }
@@ -40,7 +41,8 @@ public sealed class Address : Entity
 
     public Student? Student { get; set; }
 
-    public void Update(string street, string number, string district, string city, string state, string zipCode,
+    public void Update(string street, string number, string district, string zipCode,
+        string city, string state,
         string street2)
     {
         Initialize(street, number, district, city, state, zipCode, street2);
@@ -90,5 +92,7 @@ public sealed class Address : Entity
         var regex = new Regex(@"^([0-9]{5}-[\d]{3})$");
         DomainValidation.When(!regex.IsMatch(zipCode),
             "O CEP é obrigatório e deve possuir 5 dígitos, um traço e mais 3 dígitos.");
+
+        DomainValidation.When(street2.Length > 50, "O complemento deve possuir no máximo 50 caracteres.");
     }
 }

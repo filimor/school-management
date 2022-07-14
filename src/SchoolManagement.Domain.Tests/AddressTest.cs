@@ -1,9 +1,9 @@
 ﻿using FluentAssertions;
 using SchoolManagement.Domain.Exceptions;
 using SchoolManagement.Domain.Models;
-using SchoolManagement.Tests.ClassData;
+using SchoolManagement.Domain.Tests.ClassData;
 
-namespace SchoolManagement.Tests;
+namespace SchoolManagement.Domain.Tests;
 
 public class AddressTest
 {
@@ -15,7 +15,7 @@ public class AddressTest
             "Rua Jequitibá",
             "123",
             "Centro",
-            zipCode: "12345-678"
+            "12345-678"
         );
         address.Should().NotBeNull();
     }
@@ -29,9 +29,9 @@ public class AddressTest
             "Rua Jequitibá",
             "123",
             "Centro",
+            "12345-678",
             "São Paulo",
-            state,
-            "12345-678"
+            state
         );
         address.Should().NotBeNull();
     }
@@ -46,9 +46,9 @@ public class AddressTest
             "Rua Jequitibá",
             "123",
             "Centro",
+            "012345-678",
             "São Paulo",
             "SP",
-            "012345-678",
             "Apto 101"
         );
 
@@ -64,9 +64,9 @@ public class AddressTest
             street,
             "123",
             "Centro",
+            "012345-678",
             "São Paulo",
             "SP",
-            "012345-678",
             "Apto 101"
         );
 
@@ -82,9 +82,9 @@ public class AddressTest
             "Rua Jequitibá",
             number,
             "Centro",
+            "012345-678",
             "São Paulo",
             "SP",
-            "012345-678",
             "Apto 101"
         );
 
@@ -100,9 +100,9 @@ public class AddressTest
             "Rua Jequitibá",
             "123",
             district,
+            "012345-678",
             "São Paulo",
             "SP",
-            "012345-678",
             "Apto 101"
         );
 
@@ -118,9 +118,9 @@ public class AddressTest
             "Rua Jequitibá",
             "123",
             "Centro",
+            "012345-678",
             city,
             "SP",
-            "012345-678",
             "Apto 101"
         );
 
@@ -136,9 +136,9 @@ public class AddressTest
             "Rua Jequitibá",
             "123",
             "Centro",
+            "012345-678",
             "São Paulo",
             state,
-            "012345-678",
             "Apto 101"
         );
 
@@ -160,9 +160,9 @@ public class AddressTest
             "Rua Jequitibá",
             "123",
             "Centro",
+            zipCode,
             "São Paulo",
             "SP",
-            zipCode,
             "Apto 101"
         );
 
@@ -178,9 +178,9 @@ public class AddressTest
             "Rua Jequitibá",
             "123",
             "Centro",
+            "012345-678",
             "São Paulo",
             "SP",
-            "012345-678",
             street2
         );
 
@@ -195,18 +195,18 @@ public class AddressTest
             "Rua Jequitibá",
             "123",
             "Centro",
+            "01234-567",
             "São Paulo",
             "SP",
-            "01234-567",
             "Apto 101"
         );
 
         address.Update("Rua Beija-Flor",
             "456",
             "Jardins",
+            "02345-678",
             "Belo Horizonte",
             "MG",
-            "02345-678",
             "Apto 202");
 
         address.Id.Should().Be(1);

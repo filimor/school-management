@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 
-namespace SchoolManagement.Tests.ClassData;
+namespace SchoolManagement.Domain.Tests.ClassData;
 
 public class InvalidStringsClassData : IEnumerable<object[]>
 {

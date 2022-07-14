@@ -17,14 +17,15 @@ public sealed class Student : Entity
 
     public string Name { get; private set; } = null!;
 
-    public Address? Address { get; set; }
-    public int AddressId { get; set; }
-
     public DateTime Birthday { get; private set; }
 
     public Gender Gender { get; private set; }
 
     public SkinColor SkinColor { get; private set; }
+
+    public Address? Address { get; set; }
+
+    public int AddressId { get; set; }
 
     public void Update(string name, DateTime birthday, Gender gender,
         SkinColor skinColor)

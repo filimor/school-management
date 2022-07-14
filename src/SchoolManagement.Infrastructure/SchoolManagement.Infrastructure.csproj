@@ -26,7 +26,6 @@
     <Folder Include="Migrations\" />
     <Folder Include="Context\" />
     <Folder Include="Identity\" />
-    <Folder Include="Configurations\" />
     <Folder Include="Repositories\" />
   </ItemGroup>
 
