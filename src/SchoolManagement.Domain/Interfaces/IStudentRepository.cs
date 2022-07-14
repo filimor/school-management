@@ -5,8 +5,8 @@ namespace SchoolManagement.Domain.Interfaces;
 public interface IStudentRepository
 {
     IQueryable<Student> GetStudents();
-    Student GetStudentById(int id);
-    void AddStudent(Student student);
-    void UpdateStudent(Student student);
-    void DeleteStudent(int id);
+    Task<Student> GetStudentByIdAsync(int id);
+    Task<Student> AddStudentAsync(Student student);
+    Task<Student> UpdateStudentAsync(Student student);
+    Task<Student> DeleteStudentAsync(int id);
 }

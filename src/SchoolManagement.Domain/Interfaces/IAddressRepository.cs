@@ -5,8 +5,8 @@ namespace SchoolManagement.Domain.Interfaces;
 public interface IAddressRepository
 {
     IQueryable<Address> GetAddresses();
-    Address GetAddressById(int id);
-    void AddAddress(Address address);
-    void UpdateAddress(Address address);
-    void DeleteAddress(int id);
+    Task<Address> GetAddressByIdAsync(int id);
+    Task<Address>  AddAddressAsync(Address address);
+    Task<Address>  UpdateAddressAsync(Address address);
+    Task<Address>  DeleteAddressAsync(int id);
 }

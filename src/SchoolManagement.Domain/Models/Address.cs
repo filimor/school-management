@@ -7,8 +7,8 @@ public sealed class Address : Entity
 {
     private static readonly string[] States =
     {
-        "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG",
-        "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO"
+        "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI",
+        "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO"
     };
 
     public Address(int id, string street, string number, string district, string zipCode,
@@ -23,7 +23,6 @@ public sealed class Address : Entity
     {
         Initialize(street, number, district, city, state, zipCode, street2);
     }
-
 
     public string Street { get; private set; } = null!;
 
