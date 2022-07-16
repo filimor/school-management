@@ -5,10 +5,10 @@ using SchoolManagement.Domain.Tests.ClassData;
 
 namespace SchoolManagement.Domain.Tests;
 
-public class AddressTest
+public class AddressClassTest
 {
     [Fact]
-    public void Should_Create_New_Address_With_Required_Fields()
+    public void Constructor_OnValidDataWithId_ReturnsAddress()
     {
         var address = new Address(
             1,
@@ -17,14 +17,32 @@ public class AddressTest
             "Centro",
             "12345-678"
         );
+
         address.Should().NotBeNull();
+        address.Should().BeAssignableTo<Address>();
+    }
+
+    [Fact]
+    public void Constructor_OnValidDataWithoutId_ReturnsAddress()
+    {
+        var address = new Address(
+            "Rua Jequitibá",
+            "123",
+            "Centro",
+            "12345-678",
+            "São Paulo",
+            "SP",
+            "apto 101"
+        );
+        address.Should().NotBeNull();
+        address.Should().BeAssignableTo<Address>();
     }
 
     [Theory]
     [MemberData(nameof(BrazilianStates))]
-    public void Should_Create_Address_With_All_Brazilian_States(string state)
+    public void Constructor_OnAnyBrazilianState_R(string state)
     {
-        var address = new Address(
+        var act = () => new Address(
             1,
             "Rua Jequitibá",
             "123",
@@ -33,7 +51,9 @@ public class AddressTest
             "São Paulo",
             state
         );
-        address.Should().NotBeNull();
+
+        act.Should().NotBeNull();
+        act.Should().NotThrow<DomainException>();
     }
 
     [Theory]
@@ -223,33 +243,13 @@ public class AddressTest
     {
         return new[]
         {
-            new object[] { "AC" },
-            new object[] { "AL" },
-            new object[] { "AP" },
-            new object[] { "AM" },
-            new object[] { "BA" },
-            new object[] { "CE" },
-            new object[] { "DF" },
-            new object[] { "ES" },
-            new object[] { "GO" },
-            new object[] { "MA" },
-            new object[] { "MT" },
-            new object[] { "MS" },
-            new object[] { "MG" },
-            new object[] { "PA" },
-            new object[] { "PB" },
-            new object[] { "PR" },
-            new object[] { "PE" },
-            new object[] { "PI" },
-            new object[] { "RJ" },
-            new object[] { "RN" },
-            new object[] { "RS" },
-            new object[] { "RO" },
-            new object[] { "RR" },
-            new object[] { "SC" },
-            new object[] { "SP" },
-            new object[] { "SE" },
-            new object[] { "TO" }
+            new object[] { "AC" }, new object[] { "AL" }, new object[] { "AP" }, new object[] { "AM" },
+            new object[] { "BA" }, new object[] { "CE" }, new object[] { "DF" }, new object[] { "ES" },
+            new object[] { "GO" }, new object[] { "MA" }, new object[] { "MT" }, new object[] { "MS" },
+            new object[] { "MG" }, new object[] { "PA" }, new object[] { "PB" }, new object[] { "PR" },
+            new object[] { "PE" }, new object[] { "PI" }, new object[] { "RJ" }, new object[] { "RN" },
+            new object[] { "RS" }, new object[] { "RO" }, new object[] { "RR" }, new object[] { "SC" },
+            new object[] { "SP" }, new object[] { "SE" }, new object[] { "TO" }
         };
     }
 
@@ -257,18 +257,13 @@ public class AddressTest
     {
         return new[]
         {
-            new object[] { "" },
-            new object[] { " " },
-            new object[] { null! },
+            new object[] { "" }, new object[] { " " }, new object[] { null! },
             new object[] { new string('a', 10 + 1) }
         };
     }
 
     private static IEnumerable<object[]> InvalidAddressComplements()
     {
-        return new[]
-        {
-            new object[] { new string('a', 50 + 1) }
-        };
+        return new[] { new object[] { new string('a', 50 + 1) } };
     }
 }

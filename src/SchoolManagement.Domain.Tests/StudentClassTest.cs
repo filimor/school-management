@@ -5,10 +5,10 @@ using SchoolManagement.Domain.Tests.ClassData;
 
 namespace SchoolManagement.Domain.Tests;
 
-public class StudentTest
+public class StudentClassTest
 {
     [Fact]
-    public void Should_Create_New_Student_With_Required_Fields()
+    public void Constructor_OnValidDataWithId_ReturnsStudent()
     {
         var student = new Student(
             1,
@@ -18,10 +18,11 @@ public class StudentTest
             SkinColor.Black
         );
         student.Should().NotBeNull();
+        student.Should().BeAssignableTo<Student>();
     }
 
     [Fact]
-    public void Should_Create_New_Student_Without_Id()
+    public void Constructor_OnValidDataWithoutId_ReturnsStudent()
     {
         var student = new Student(
             "Maria Aparecida Alcântara de Souza Ramos",
@@ -30,12 +31,13 @@ public class StudentTest
             SkinColor.Black
         );
         student.Should().NotBeNull();
+        student.Should().BeAssignableTo<Student>();
     }
 
     [Theory]
     [InlineData(0)]
     [InlineData(-1)]
-    public void Should_Not_Create_Student_With_Invalid_Id(int id)
+    public void Constructor_OnInvalidId_ThrowsDomainException(int id)
     {
         var act = () => new Student(
             id,
@@ -50,7 +52,7 @@ public class StudentTest
 
     [Theory]
     [ClassData(typeof(InvalidStringsClassData))]
-    public void Should_Not_Create_Student_With_Invalid_Name(string name)
+    public void Constructor_OnInvalidName_ThrowsDomainException(string name)
     {
         var act = () => new Student(
             1,
@@ -65,7 +67,7 @@ public class StudentTest
 
 
     [Fact]
-    public void Should_Not_Create_Student_With_Invalid_Birthday()
+    public void Constructor_OnInvalidBirthday_ThrowsDomainException()
     {
         var act = () => new Student(
             1,
@@ -79,7 +81,7 @@ public class StudentTest
     }
 
     [Fact]
-    public void Should_Be_Able_To_Update_Student_Data_With_Same_Id()
+    public void Update_OnValidData_UpdatesObjectAttributes()
     {
         var student = new Student(
             1,
@@ -100,6 +102,4 @@ public class StudentTest
         student.Gender.Should().Be(Gender.TransMan);
         student.SkinColor.Should().Be(SkinColor.Yellow);
     }
-
-
 }
