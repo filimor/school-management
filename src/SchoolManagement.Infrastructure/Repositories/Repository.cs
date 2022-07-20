@@ -18,17 +18,17 @@ public class Repository<T> : IRepository<T> where T : Entity
 
     public async Task<T> GetAsync(int id)
     {
-        return (await Entities.FindAsync(id))!;
+        return await Entities.AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
     }
 
     public async Task<IEnumerable<T>> GetAllAsync()
     {
-        return await Entities.ToListAsync();
+        return await Entities.AsNoTracking().ToListAsync();
     }
 
-    public async Task AddAsync(T entity)
+    public void Add(T entity)
     {
-        await Entities.AddAsync(entity);
+        Entities.Add(entity);
     }
 
     public void Update(T entity)
@@ -43,6 +43,6 @@ public class Repository<T> : IRepository<T> where T : Entity
 
     public async Task<IEnumerable<T>> FindAsync(Expression<Func<T, bool>> predicate)
     {
-        return await Entities.Where(predicate).ToListAsync();
+        return await Entities.AsNoTracking().Where(predicate).ToListAsync();
     }
 }

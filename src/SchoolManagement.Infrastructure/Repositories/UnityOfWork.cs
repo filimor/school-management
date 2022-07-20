@@ -5,15 +5,15 @@ using SchoolManagement.Infrastructure.Interfaces;
 
 namespace SchoolManagement.Infrastructure.Repositories;
 
-public sealed class UnityOfWork : IUnitOfWork, IDisposable
+public sealed class UnityOfWork : IUnitOfWork
 {
     private readonly SchoolDbContext _context;
+    private IRepository<Address> _addressRepository;
+    private IRepository<Student> _studentRepository;
 
     public UnityOfWork(SchoolDbContext context)
     {
         _context = context;
-        StudentRepository = new Repository<Student>(_context);
-        AddressRepository = new Repository<Address>(_context);
     }
 
     public void Dispose()
@@ -21,9 +21,9 @@ public sealed class UnityOfWork : IUnitOfWork, IDisposable
         _context.Dispose();
     }
 
-    public IRepository<Student> StudentRepository { get; }
+    public IRepository<Student> StudentRepository => _studentRepository ??= new Repository<Student>(_context);
 
-    public IRepository<Address> AddressRepository { get; }
+    public IRepository<Address> AddressRepository => _addressRepository ??= new Repository<Address>(_context);
 
     public async Task SaveAsync()
     {
