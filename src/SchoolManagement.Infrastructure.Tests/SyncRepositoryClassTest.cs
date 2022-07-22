@@ -8,7 +8,7 @@ using SchoolManagement.Infrastructure.Tests.ClassData;
 
 namespace SchoolManagement.Infrastructure.Tests;
 
-public class RepositoryClassTest
+public class SyncRepositoryClassTest
 {
     [Theory]
     [ClassData(typeof(EntitiesGenerator))]
@@ -21,7 +21,7 @@ public class RepositoryClassTest
         contextMock.Setup(x => x.Set<Entity>()).Returns(dbSetMock.Object);
 
         // Act
-        var repository = new Repository<Entity>(contextMock.Object);
+        var repository = new SyncRepository<Entity>(contextMock.Object);
         repository.Add(entity);
 
         // Assert
@@ -40,7 +40,7 @@ public class RepositoryClassTest
         contextMock.Setup(x => x.Set<Entity>()).Returns(dbSetMock.Object);
 
         // Act
-        var repository = new Repository<Entity>(contextMock.Object);
+        var repository = new SyncRepository<Entity>(contextMock.Object);
         repository.Update(entity);
 
         // Assert
@@ -59,7 +59,7 @@ public class RepositoryClassTest
         contextMock.Setup(x => x.Set<Entity>()).Returns(dbSetMock.Object);
 
         // Act
-        var repository = new Repository<Entity>(contextMock.Object);
+        var repository = new SyncRepository<Entity>(contextMock.Object);
         repository.Remove(entity);
 
         // Assert
@@ -67,9 +67,9 @@ public class RepositoryClassTest
         dbSetMock.Verify(x => x.Remove(It.Is<Entity>(y => y == entity)));
     }
 
-    [Theory(Skip = "Fix the async implementation")]
+    [Theory]
     [ClassData(typeof(EntitiesGenerator))]
-    public async void GetAsync_OnEntityPassed_CallGetAsyncMethodOnDbSet(Entity entity)
+    public void Get_OnEntityPassed_CallGetMethodOnDbSet(Entity entity)
     {
         // Arrange
         var entitiesList = new List<Entity> { entity };
@@ -81,17 +81,18 @@ public class RepositoryClassTest
         //dbSetMock.Setup(x => x.FirstOrDefaultAsync(It.IsAny<Expression<Func<Entity, bool>>>(), default)).Returns(Task.FromResult<Entity>);
 
         // Act
-        var repository = new Repository<Entity>(contextMock.Object);
-        await repository.GetAsync(1);
+        var repository = new SyncRepository<Entity>(contextMock.Object);
+        var queryResult = repository.Get(1);
 
         // Assert
         contextMock.Verify(x => x.Set<Entity>());
-        dbSetMock.Verify(x => x.FirstOrDefaultAsync(default));
+        //dbSetMock.Verify(x => x.FirstOrDefault());
+        queryResult.Should().BeEquivalentTo(entity);
     }
 
-    [Theory(Skip = "Fix the async implementation")]
+    [Theory]
     [ClassData(typeof(EntitiesGenerator))]
-    public async void GetAllAsync_OnEntityPassed_CallToListAsyncMethodOnDbSet(Entity entity)
+    public void GetAll_OnEntityPassed_CallToListMethodOnDbSet(Entity entity)
     {
         // Arrange
         var entitiesList = new List<Entity> { entity };
@@ -100,18 +101,18 @@ public class RepositoryClassTest
         contextMock.Setup(x => x.Set<Entity>()).Returns(dbSetMock.Object);
 
         // Act
-        var repository = new Repository<Entity>(contextMock.Object);
-        var queryResult = await repository.GetAllAsync();
+        var repository = new SyncRepository<Entity>(contextMock.Object);
+        var queryResult = repository.GetAll();
 
         // Assert
         contextMock.Verify(x => x.Set<Entity>());
-        dbSetMock.Verify(x => x.ToListAsync(default));
+        //dbSetMock.Verify(x => x.ToList());
         queryResult.Should().BeEquivalentTo(entitiesList);
     }
 
-    [Theory(Skip = "Fix the async implementation")]
+    [Theory]
     [ClassData(typeof(EntitiesGenerator))]
-    public async void FindAsync_OnEntityPassed_CallToListAsyncMethodWithWhere(Entity entity)
+    public void Find_OnEntityPassed_CallToListMethodWithWhere(Entity entity)
     {
         // Arrange
         var entitiesList = new List<Entity> { entity };
@@ -120,12 +121,12 @@ public class RepositoryClassTest
         contextMock.Setup(x => x.Set<Entity>()).Returns(dbSetMock.Object);
 
         // Act
-        var repository = new Repository<Entity>(contextMock.Object);
-        var queryResult = await repository.FindAsync(x => x.Id == entity.Id);
+        var repository = new SyncRepository<Entity>(contextMock.Object);
+        var queryResult = repository.Find(x => x.Id == entity.Id);
 
         // Assert
         contextMock.Verify(x => x.Set<Entity>());
-        dbSetMock.Verify(x => x.ToListAsync(default));
+        //dbSetMock.Verify(x => x.Where(It.Is<Expression<Func<Entity, bool>>>(y => y.Compile().Invoke(entity))));
         queryResult.Should().Equal(entity);
     }
 
@@ -138,6 +139,7 @@ public class RepositoryClassTest
         dbSetMock.As<IQueryable<T>>().Setup(x => x.Expression).Returns(queryable.Expression);
         dbSetMock.As<IQueryable<T>>().Setup(x => x.ElementType).Returns(queryable.ElementType);
         dbSetMock.As<IQueryable<T>>().Setup(x => x.GetEnumerator()).Returns(queryable.GetEnumerator());
+        //dbSetMock.As<IQueryable<T>>().Setup(x => x.ToList()).Returns(queryable.ToList());
 
         //dbSetMock.Setup(x => x.Add(It.IsAny<T>())).Callback<T>(collection.Add);
         return dbSetMock;
