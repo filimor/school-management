@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <Folder Include="IoC\" />
+    <Folder Include="Logging\" />
   </ItemGroup>
 
 </Project>

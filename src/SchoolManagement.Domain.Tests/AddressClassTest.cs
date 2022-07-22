@@ -1,147 +1,186 @@
 ﻿using FluentAssertions;
 using SchoolManagement.Domain.Exceptions;
 using SchoolManagement.Domain.Models;
-using SchoolManagement.Tests.ClassData;
+using SchoolManagement.Domain.Tests.ClassData;
 
-namespace SchoolManagement.Tests;
+namespace SchoolManagement.Domain.Tests;
 
-public class AddressTest
+public class AddressClassTest
 {
     [Fact]
-    public void Should_Create_New_Address_With_Required_Fields()
+    public void Constructor_OnValidDataWithId_ReturnsAddress()
     {
+        // Act
         var address = new Address(
             1,
             "Rua Jequitibá",
             "123",
             "Centro",
-            zipCode: "12345-678"
+            "12345-678"
         );
+
+        // Assert
         address.Should().NotBeNull();
+        address.Should().BeAssignableTo<Address>();
+    }
+
+    [Fact]
+    public void Constructor_OnValidDataWithoutId_ReturnsAddress()
+    {
+        // Act
+        var address = new Address(
+            "Rua Jequitibá",
+            "123",
+            "Centro",
+            "12345-678",
+            "São Paulo",
+            "SP",
+            "apto 101"
+        );
+
+        // Assert
+        address.Should().NotBeNull();
+        address.Should().BeAssignableTo<Address>();
     }
 
     [Theory]
     [MemberData(nameof(BrazilianStates))]
-    public void Should_Create_Address_With_All_Brazilian_States(string state)
+    public void Constructor_OnAnyBrazilianState_ReturnsAddress(string state)
     {
-        var address = new Address(
+        // Act
+        var act = () => new Address(
             1,
             "Rua Jequitibá",
             "123",
             "Centro",
+            "12345-678",
             "São Paulo",
-            state,
-            "12345-678"
+            state
         );
-        address.Should().NotBeNull();
+
+        // Assert
+        act.Should().NotBeNull();
+        act.Should().NotThrow<DomainException>();
     }
 
     [Theory]
     [InlineData(0)]
     [InlineData(-1)]
-    public void Should_Not_Create_Address_With_Invalid_Id(int id)
+    public void Constructor_OnInvalidId_ThrowsDomainException(int id)
     {
+        // Act
         var act = () => new Address(
             id,
             "Rua Jequitibá",
             "123",
             "Centro",
+            "012345-678",
             "São Paulo",
             "SP",
-            "012345-678",
             "Apto 101"
         );
 
+        // Assert
         act.Should().Throw<DomainException>();
     }
 
     [Theory]
     [ClassData(typeof(InvalidStringsClassData))]
-    public void Should_Not_Create_Address_With_Invalid_Street(string street)
+    public void Constructor_OnInvalidStreet_ThrowsDomainException(string street)
     {
+        // Act
         var act = () => new Address(
             1,
             street,
             "123",
             "Centro",
+            "012345-678",
             "São Paulo",
             "SP",
-            "012345-678",
             "Apto 101"
         );
 
+        // Assert
         act.Should().Throw<DomainException>();
     }
 
     [Theory]
     [MemberData(nameof(InvalidAddressNumbers))]
-    public void Should_Not_Create_Address_With_Invalid_Number(string number)
+    public void Constructor_OnInvalidNumber_ThrowsDomainException(string number)
     {
+        // Act
         var act = () => new Address(
             1,
             "Rua Jequitibá",
             number,
             "Centro",
+            "012345-678",
             "São Paulo",
             "SP",
-            "012345-678",
             "Apto 101"
         );
 
+        // Assert
         act.Should().Throw<DomainException>();
     }
 
     [Theory]
     [ClassData(typeof(InvalidStringsClassData))]
-    public void Should_Not_Create_Address_With_Invalid_District(string district)
+    public void Constructor_OnInvalidDistrict_ThrowsDomainException(string district)
     {
+        // Act
         var act = () => new Address(
             1,
             "Rua Jequitibá",
             "123",
             district,
+            "012345-678",
             "São Paulo",
             "SP",
-            "012345-678",
             "Apto 101"
         );
 
+        // Assert
         act.Should().Throw<DomainException>();
     }
 
     [Theory]
     [ClassData(typeof(InvalidStringsClassData))]
-    public void Should_Not_Create_Address_With_Invalid_City(string city)
+    public void Constructor_OnInvalidCity_ThrowsDomainException(string city)
     {
+        // Act
         var act = () => new Address(
             1,
             "Rua Jequitibá",
             "123",
             "Centro",
+            "012345-678",
             city,
             "SP",
-            "012345-678",
             "Apto 101"
         );
 
+        // Assert
         act.Should().Throw<DomainException>();
     }
 
     [Theory]
     [ClassData(typeof(InvalidStringsClassData))]
-    public void Should_Not_Create_Address_With_Invalid_State(string state)
+    public void Constructor_OnInvaliState_ThrowsDomainException(string state)
     {
+        // Act
         var act = () => new Address(
             1,
             "Rua Jequitibá",
             "123",
             "Centro",
+            "012345-678",
             "São Paulo",
             state,
-            "012345-678",
             "Apto 101"
         );
 
+        // Assert
         act.Should().Throw<DomainException>();
     }
 
@@ -153,62 +192,69 @@ public class AddressTest
     [InlineData("1234567")]
     [InlineData("12345678")]
     [InlineData("1234567a")]
-    public void Should_Not_Create_Address_With_Invalid_ZipCode(string zipCode)
+    public void Constructor_OnInvalidZipCode_ThrowsDomainException(string zipCode)
     {
+        // Act
         var act = () => new Address(
             1,
             "Rua Jequitibá",
             "123",
             "Centro",
+            zipCode,
             "São Paulo",
             "SP",
-            zipCode,
             "Apto 101"
         );
 
+        // Assert
         act.Should().Throw<DomainException>();
     }
 
     [Theory]
-    [MemberData(nameof(InvalidAddressComplements))]
-    public void Should_Not_Create_Address_With_Invalid_Street2(string street2)
+    [MemberData(nameof(InvalidAddressStreet2))]
+    public void Constructor_OnInvalidStreet2_ThrowsDomainException(string street2)
     {
+        // Act
         var act = () => new Address(
             1,
             "Rua Jequitibá",
             "123",
             "Centro",
+            "012345-678",
             "São Paulo",
             "SP",
-            "012345-678",
             street2
         );
 
+        // Assert
         act.Should().Throw<DomainException>();
     }
 
     [Fact]
-    public void Should_Be_Able_To_Update_Address_Data_With_Same_Id()
+    public void Update_OnValidDate_UpdatesObjectAttributes()
     {
+        // Arrange
         var address = new Address(
             1,
             "Rua Jequitibá",
             "123",
             "Centro",
+            "01234-567",
             "São Paulo",
             "SP",
-            "01234-567",
             "Apto 101"
         );
 
+        // Act
         address.Update("Rua Beija-Flor",
             "456",
             "Jardins",
+            "02345-678",
             "Belo Horizonte",
             "MG",
-            "02345-678",
             "Apto 202");
 
+        // Assert
         address.Id.Should().Be(1);
         address.Street.Should().Be("Rua Beija-Flor");
         address.Number.Should().Be("456");
@@ -223,33 +269,13 @@ public class AddressTest
     {
         return new[]
         {
-            new object[] { "AC" },
-            new object[] { "AL" },
-            new object[] { "AP" },
-            new object[] { "AM" },
-            new object[] { "BA" },
-            new object[] { "CE" },
-            new object[] { "DF" },
-            new object[] { "ES" },
-            new object[] { "GO" },
-            new object[] { "MA" },
-            new object[] { "MT" },
-            new object[] { "MS" },
-            new object[] { "MG" },
-            new object[] { "PA" },
-            new object[] { "PB" },
-            new object[] { "PR" },
-            new object[] { "PE" },
-            new object[] { "PI" },
-            new object[] { "RJ" },
-            new object[] { "RN" },
-            new object[] { "RS" },
-            new object[] { "RO" },
-            new object[] { "RR" },
-            new object[] { "SC" },
-            new object[] { "SP" },
-            new object[] { "SE" },
-            new object[] { "TO" }
+            new object[] { "AC" }, new object[] { "AL" }, new object[] { "AP" }, new object[] { "AM" },
+            new object[] { "BA" }, new object[] { "CE" }, new object[] { "DF" }, new object[] { "ES" },
+            new object[] { "GO" }, new object[] { "MA" }, new object[] { "MT" }, new object[] { "MS" },
+            new object[] { "MG" }, new object[] { "PA" }, new object[] { "PB" }, new object[] { "PR" },
+            new object[] { "PE" }, new object[] { "PI" }, new object[] { "RJ" }, new object[] { "RN" },
+            new object[] { "RS" }, new object[] { "RO" }, new object[] { "RR" }, new object[] { "SC" },
+            new object[] { "SP" }, new object[] { "SE" }, new object[] { "TO" }
         };
     }
 
@@ -257,18 +283,13 @@ public class AddressTest
     {
         return new[]
         {
-            new object[] { "" },
-            new object[] { " " },
-            new object[] { null! },
+            new object[] { "" }, new object[] { " " }, new object[] { null! },
             new object[] { new string('a', 10 + 1) }
         };
     }
 
-    private static IEnumerable<object[]> InvalidAddressComplements()
+    private static IEnumerable<object[]> InvalidAddressStreet2()
     {
-        return new[]
-        {
-            new object[] { new string('a', 50 + 1) }
-        };
+        return new[] { new object[] { new string('a', 50 + 1) } };
     }
 }

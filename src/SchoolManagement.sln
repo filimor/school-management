@@ -13,7 +13,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolManagement.Infrastruc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolManagement.Api", "SchoolManagement.Api\SchoolManagement.Api.csproj", "{9DFBE563-8360-4890-A543-5E414E204064}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolManagement.Domain.Tests", "SchoolManagement.Domain.Tests\SchoolManagement.Domain.Tests.csproj", "{91EB3D4D-1311-4033-BA85-CD5165C6EB17}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolManagement.Domain.Tests", "SchoolManagement.Domain.Tests\SchoolManagement.Domain.Tests.csproj", "{91EB3D4D-1311-4033-BA85-CD5165C6EB17}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1F37EDA2-1A55-4015-AD51-7AC389BA02A9}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolManagement.Infrastructure.Tests", "SchoolManagement.Infrastructure.Tests\SchoolManagement.Infrastructure.Tests.csproj", "{96AF4AD2-3D96-4ED6-A8C9-E11385D8F20E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +52,10 @@ Global
 		{91EB3D4D-1311-4033-BA85-CD5165C6EB17}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91EB3D4D-1311-4033-BA85-CD5165C6EB17}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{91EB3D4D-1311-4033-BA85-CD5165C6EB17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96AF4AD2-3D96-4ED6-A8C9-E11385D8F20E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96AF4AD2-3D96-4ED6-A8C9-E11385D8F20E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96AF4AD2-3D96-4ED6-A8C9-E11385D8F20E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96AF4AD2-3D96-4ED6-A8C9-E11385D8F20E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
