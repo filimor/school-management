@@ -6,13 +6,13 @@ using SchoolManagement.Infrastructure.Repositories;
 
 namespace SchoolManagement.Infrastructure.UoW;
 
-public sealed class SyncUnityOfWork : ISyncUnitOfWork
+public sealed class SyncUnitOfWork : ISyncUnitOfWork
 {
     private readonly SchoolDbContext _context;
     private ISyncRepository<Address> _addressRepository;
     private ISyncRepository<Student> _studentRepository;
 
-    public SyncUnityOfWork(SchoolDbContext context)
+    public SyncUnitOfWork(SchoolDbContext context)
     {
         _context = context;
     }

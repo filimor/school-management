@@ -5,6 +5,10 @@ namespace SchoolManagement.Infrastructure.Context;
 
 public class SchoolDbContext : DbContext
 {
+    public SchoolDbContext()
+    {
+    }
+
     public SchoolDbContext(DbContextOptions<SchoolDbContext> options) : base(options)
     {
     }

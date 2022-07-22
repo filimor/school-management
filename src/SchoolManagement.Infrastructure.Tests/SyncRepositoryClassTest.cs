@@ -26,7 +26,7 @@ public class SyncRepositoryClassTest
 
         // Assert
         contextMock.Verify(x => x.Set<Entity>());
-        dbSetMock.Verify(x => x.Add(It.Is<Entity>(y => y == entity)));
+        dbSetMock.Verify(x => x.Add(It.Is<Entity>(y => y == entity)), Times.Once);
     }
 
     [Theory]
@@ -45,7 +45,7 @@ public class SyncRepositoryClassTest
 
         // Assert
         contextMock.Verify(x => x.Set<Entity>());
-        dbSetMock.Verify(x => x.Update(It.Is<Entity>(y => y == entity)));
+        dbSetMock.Verify(x => x.Update(It.Is<Entity>(y => y == entity)), Times.Once);
     }
 
     [Theory]
@@ -64,7 +64,7 @@ public class SyncRepositoryClassTest
 
         // Assert
         contextMock.Verify(x => x.Set<Entity>());
-        dbSetMock.Verify(x => x.Remove(It.Is<Entity>(y => y == entity)));
+        dbSetMock.Verify(x => x.Remove(It.Is<Entity>(y => y == entity)), Times.Once);
     }
 
     [Theory]
