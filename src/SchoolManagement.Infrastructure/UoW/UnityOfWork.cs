@@ -1,11 +1,6 @@
-﻿using SchoolManagement.Domain.Interfaces;
-using SchoolManagement.Domain.Models;
-using SchoolManagement.Infrastructure.Context;
-using SchoolManagement.Infrastructure.Interfaces;
-using SchoolManagement.Infrastructure.Repositories;
+﻿namespace SchoolManagement.Infrastructure.UoW;
 
-namespace SchoolManagement.Infrastructure.UoW;
-
+/*
 public sealed class UnityOfWork : IUnitOfWork
 {
     private readonly SchoolDbContext _context;
@@ -31,3 +26,4 @@ public sealed class UnityOfWork : IUnitOfWork
         await _context.SaveChangesAsync();
     }
 }
+*/

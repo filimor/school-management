@@ -5,7 +5,7 @@ using SchoolManagement.Domain.Tests.ClassData;
 
 namespace SchoolManagement.Domain.Tests;
 
-public class AddressClassTest
+public class AddressTest
 {
     [Fact]
     public void Constructor_OnValidDataWithId_ReturnsAddress()
