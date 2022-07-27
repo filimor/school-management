@@ -21,7 +21,5 @@ public class CreateStudentDto
     [EnumDataType(typeof(SkinColor))]
     public SkinColor SkinColor { get; set; }
 
-    [Required]
-    [Range(1, int.MaxValue)]
-    public int AddressId { get; set; }
+    [Required] [Range(1, int.MaxValue)] public int AddressId { get; set; }
 }

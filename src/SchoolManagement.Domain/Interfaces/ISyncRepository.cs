@@ -9,6 +9,6 @@ public interface ISyncRepository<T> where T : Entity
     IEnumerable<T> GetAll();
     void Add(T entity);
     void Update(T entity);
-    void Remove(T entity);
+    void Delete(T entity);
     IEnumerable<T> Find(Expression<Func<T, bool>> predicate);
 }

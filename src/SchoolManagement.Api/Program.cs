@@ -10,7 +10,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<IRepository<Entity>, Repository<Entity>>();
+builder.Services.AddScoped<ISyncRepository<Entity>, SyncRepository<Entity>>();
 builder.Services.AddAutoMapper(typeof(DomainToDtoProfile), typeof(DtoToDomainProfile));
 
 var app = builder.Build();

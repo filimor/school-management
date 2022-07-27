@@ -5,7 +5,7 @@ using SchoolManagement.Domain.Tests.ClassData;
 
 namespace SchoolManagement.Domain.Tests;
 
-public class StudentClassTest
+public class StudentTest
 {
     [Fact]
     public void Constructor_OnValidDataWithId_ReturnsStudent()
@@ -75,7 +75,6 @@ public class StudentClassTest
         act.Should().Throw<DomainException>();
     }
 
-
     [Fact]
     public void Constructor_OnInvalidBirthday_ThrowsDomainException()
     {
@@ -103,7 +102,6 @@ public class StudentClassTest
             Gender.CisWoman,
             SkinColor.Black
         );
-
 
         // Act
         student.Update("José Ricardo Eugênio Matoso de Barros",

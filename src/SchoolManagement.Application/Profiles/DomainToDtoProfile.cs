@@ -1,21 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿    using AutoMapper;
 using SchoolManagement.Application.Data.AddressDtos;
 using SchoolManagement.Application.Data.StudentDtos;
 using SchoolManagement.Domain.Models;
 
-namespace SchoolManagement.Application.Profiles
+namespace SchoolManagement.Application.Profiles;
+
+public class DomainToDtoProfile : Profile
 {
-    public class DomainToDtoProfile : Profile
+    public DomainToDtoProfile()
     {
-        public DomainToDtoProfile()
-        {
-            CreateMap<Address, GetAddressDto>();
-            CreateMap<Student, GetStudentDto>();
-        }
+        CreateMap<Address, GetAddressDto>();
+        CreateMap<Student, GetStudentDto>();
     }
 }

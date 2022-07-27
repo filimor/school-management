@@ -4,7 +4,6 @@ namespace SchoolManagement.Application.Data.AddressDtos;
 
 public class GetAddressDto : IGetEntity
 {
-    public int Id { get; set; }
     public string Street { get; set; }
     public string Number { get; set; }
     public string Street2 { get; set; }
@@ -12,6 +11,7 @@ public class GetAddressDto : IGetEntity
     public string City { get; set; }
     public string State { get; set; }
     public string ZipCode { get; set; }
+    public int Id { get; set; }
     public DateTime CreatedAt { get; set; }
     public DateTime LastModified { get; set; }
 }

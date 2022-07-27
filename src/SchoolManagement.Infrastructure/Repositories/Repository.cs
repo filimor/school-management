@@ -1,10 +1,6 @@
-﻿using System.Linq.Expressions;
-using Microsoft.EntityFrameworkCore;
-using SchoolManagement.Domain.Interfaces;
-using SchoolManagement.Domain.Models;
+﻿namespace SchoolManagement.Infrastructure.Repositories;
 
-namespace SchoolManagement.Infrastructure.Repositories;
-
+/*
 public class Repository<T> : IRepository<T> where T : Entity
 {
     protected readonly DbContext Context;
@@ -36,7 +32,7 @@ public class Repository<T> : IRepository<T> where T : Entity
         Entities.Update(entity);
     }
 
-    public void Remove(T entity)
+    public void Delete(T entity)
     {
         Entities.Remove(entity);
     }
@@ -46,3 +42,4 @@ public class Repository<T> : IRepository<T> where T : Entity
         return await Entities.AsNoTracking().Where(predicate).ToListAsync();
     }
 }
+*/
